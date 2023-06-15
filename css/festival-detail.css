@@ -1,0 +1,47 @@
+/* 별점 */
+.stars {
+    color: #ffc107; 
+}
+
+.stars .fa-star.checked {
+    color: #ffc107; 
+}
+
+.stars .fa-star.unchecked {
+    color: #ddd; 
+}
+
+/* 위시리스트 아이콘 스타일 */
+.wishlist-icon {
+  color: blue;
+}
+.wishlist-icon.active {
+  color: red;
+}
+
+
+/* 팝업 스타일 */
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#popup p {
+  margin: 0;
+}
+
+#popup a {
+  color: blue;
+  text-decoration: none;
+}
+
+#popup a:hover {
+  text-decoration: underline;
+}

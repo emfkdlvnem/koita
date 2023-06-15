@@ -1,0 +1,43 @@
+[
+    {"id":1,"title":"덴덴 타이코(미니 북)",
+    "price":5000,
+    "description":"미니 사이즈 북. 전통 악기를 미니 사이즈로 즐겨보세요.",
+    "category":"",
+    "image":"/shopping/image/festival/kitsune",
+    "rating":{"rate":3,"count":120}},
+
+    {"id":2,"title":"키츠네 가면",
+    "price":25000,
+    "description":"여유 모양 가면 입니다. 유카타와 함께 착용해 보세요.",
+    "category":"men's clothing",
+    "image":"/shopping/image/festival/kitsune",
+    "rating":{"rate":4.1,"count":259}},
+    
+    {"id":3,"title":"유카타셋트(여)",
+    "price":15000,
+    "description":"여유 모양 가면 입니다. 유카타와 함께 착용해 보세요.",
+    "category":"men's clothing",
+    "image":"/shopping/image/festival/kitsune",
+    "rating":{"rate":4.7,"count":500}},
+    
+    {"id":4,"title":"부채",
+    "price":30000,
+    "description":"여유 모양 가면 입니다. 유카타와 함께 착용해 보세요.",
+    "category":"men's clothing",
+    "image":"/shopping/image/festival/kitsune",
+    "rating":{"rate":2.1,"count":430}},
+    
+    {"id":5,"title":"비누방울",
+    "price":35000,
+    "description":"여유 모양 가면 입니다. 유카타와 함께 착용해 보세요.",
+    "category":"men's clothing",
+    "image":"/shopping/image/festival/kitsune",
+    "rating":{"rate":4.6,"count":400}},
+    
+    {"id":6,"title":"물고기잡이",
+    "price":5000,
+    "description":"여유 모양 가면 입니다. 유카타와 함께 착용해 보세요.",
+    "category":"men's clothing",
+    "image":"/shopping/image/festival/kitsune",
+    "rating":{"rate":3.9,"count":70}}
+]
