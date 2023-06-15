@@ -9,7 +9,7 @@
     background-color: #fff;
     z-index: 100;
 }
-.header > .inn {
+.header-inn {
     position: relative;
     max-width: 1440px;
     height: 100px;
@@ -18,7 +18,7 @@
 }
 
 /* top-bar */
-.header .top-bar {
+.top-bar {
     display: flex;
     justify-content: flex-end;
 }
@@ -60,10 +60,10 @@
     text-align: left;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     display: none;
-    transition: all 0.5s
-
+    transition: all 0.5s;
+    background-color: #fff;
 }
-.header-main-bar .nav .show ~ .menu {
+.header-main-bar .nav .menu.show {
     display: block;
 }
 .header-main-bar .nav .menu >li {

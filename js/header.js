@@ -1,25 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const setupMenu = () => {
-        const btnMenu = document.querySelector('.btn-menu');
-        const menu = document.querySelector('.menu');
-    
-        if (btnMenu && menu) {
-            btnMenu.addEventListener('click', function() {
-                menu.classList.toggle('show');
-            });
-    
-            document.addEventListener('click', function(event) {
-            if (!event.target.closest('.header-main-bar .nav')) {
-                menu.classList.remove('show');
-            }
-            });
-        }
-    };
-    
-    setupMenu(); // setupMenu 함수를 호출하여 메뉴 동작을 설정합니다.
-});
-
-
 const loadHeader = () => {
     const header = document.querySelector('.header');
     const headerURL = '../components/header.html';
@@ -29,7 +7,22 @@ const loadHeader = () => {
         .then(data => {
             header.innerHTML = data;
             updateCartCount();
+            addMenuToggle();
         });
+}
+const addMenuToggle = () => {
+    const btnMenu = document.querySelector('.btn-menu');
+    const menu = document.querySelector('.menu');
+
+    btnMenu.addEventListener('click', () => {
+        menu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !btnMenu.contains(event.target)) {
+            menu.classList.remove('show');
+        }
+    });
 }
 
 const updateCartCount = () => {
