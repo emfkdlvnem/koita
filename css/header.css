@@ -59,11 +59,11 @@
     padding: 40px;
     text-align: left;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-    /* display: none; */
+    display: none;
     transition: all 0.5s
 
 }
-.header-main-bar .nav .menu.show {
+.header-main-bar .nav .show ~ .menu {
     display: block;
 }
 .header-main-bar .nav .menu >li {

@@ -1,11 +1,11 @@
 .stars {
-    color: #ffc107; /* 노란색으로 색칠할 별의 색상 */
+    color: #ffc107; 
 }
 
 .stars .fa-star.checked {
-    color: #ffc107; /* 색칠된 별의 색상 */
+    color: #ffc107; 
 }
 
 .stars .fa-star.unchecked {
-    color: #ddd; /* 색칠되지 않은 별의 색상 */
+    color: #ddd; 
 }

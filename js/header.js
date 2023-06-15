@@ -9,13 +9,16 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     
             document.addEventListener('click', function(event) {
-                if (!event.target.closest('.header-main-bar .nav')) {
-                    menu.classList.remove('show');
-                }
+            if (!event.target.closest('.header-main-bar .nav')) {
+                menu.classList.remove('show');
+            }
             });
         }
     };
+    
+    setupMenu(); // setupMenu 함수를 호출하여 메뉴 동작을 설정합니다.
 });
+
 
 const loadHeader = () => {
     const header = document.querySelector('.header');
