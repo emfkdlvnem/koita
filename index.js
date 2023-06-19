@@ -66,33 +66,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // 오이타 소식 category
-    const dtElements = document.querySelectorAll('.tour-category dt');
-    const ddElements = document.querySelectorAll('.tour-category dd');
-    
-    // 초기에 첫 번째 카테고리만 보이도록 설정
-    ddElements.forEach((dd, index) => {
-        if (index !== 0) {
-            dd.style.display = 'none';
-        }
-    });
-    
-    dtElements.forEach((dt, currentIndex) => {
-        dt.addEventListener('click', () => {
-            dtElements.forEach((otherDt, otherIndex) => {
+    function initializeTourCategory(dtElements, ddElements) {
+        // 초기에 첫 번째 카테고리만 보이도록
+        ddElements.forEach((dd, index) => {
+            if (index !== 0) {
+                dd.style.display = 'none';
+            }
+        });
+        // 첫 번째 카테고리에 'active' 클래스 넣기
+        dtElements[0].classList.add('active');
+
+        dtElements.forEach((dt, currentIndex) => {
+            dt.addEventListener('click', () => {
+                dtElements.forEach((otherDt, otherIndex) => {
                 const otherDd = ddElements[otherIndex];
                 const isActive = otherIndex === currentIndex;
-    
+        
                 otherDt.classList.toggle('active', isActive);
                 otherDd.style.display = isActive ? 'block' : 'none';
+                });
             });
         });
-    });
-    
-    
-    
-    
-    
-    
+    }
 
+    const dtElements1 = document.querySelectorAll('.tour-category dt');
+    const ddElements1 = document.querySelectorAll('.tour-category dd');
+    initializeTourCategory(dtElements1, ddElements1);
+
+    const dtElements2 = document.querySelectorAll('.festival-category dt');
+    const ddElements2 = document.querySelectorAll('.festival-category dd');
+    initializeTourCategory(dtElements2, ddElements2);
 });
 

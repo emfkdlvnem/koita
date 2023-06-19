@@ -122,14 +122,234 @@
 }
 
 /* 오이타 소식 tour-category */
-.oita-tour {}
-.oita-tour .tour-category {
-
+/* 오이타 축제 festival-category */
+.oita-tour, .oita-festival {
+    position: relative;
+    max-width: 1440px;
+    margin: 60px auto 0;
+    padding: 15px 24px;
 }
-.oita-tour .tour-category dt .btn {
+.oita-tour:before, .oita-festival:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    width: 1440px;
+    height: 1px;
+    background-color: #C4C4C4;
+}
+.oita-festival {
+    margin-top: 100px;
+}
+.section-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.section-title span {
+    display: block;
+    margin-right: 10px;
+    font-size: 32px;
+    line-height: 1;
+}
+.section-title img {
+    width: 32.5px;
+}
+
+.oita-tour .tour-category dt,
+.oita-festival .festival-category dt  {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.oita-tour .tour-category dt.category01 {
+    margin-left: -65px;
+}
+.oita-tour .tour-category dt.category02 {
+    margin-left: 65px;
+}
+
+.oita-festival .festival-category dt.category01 {
+    margin-left: -95px;
+}
+.oita-festival .festival-category dt.category02 {
+    margin-left: 95px;
+}
+
+dt .btn {
     display: inline-block;
     padding: 8px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid  #000;
+    border-radius: 7px;
+    background-color: #fff;
 }
-.oita-tour .tour-category dt.active .btn{
-    /* background-color: #7F5539; */
+dt.active .btn{
+    color: #fff;
+    border-color: #7F5539;
+    background-color: #7F5539;
+}
+
+dd {
+    margin: 130px auto 0;
+    text-align: center;
+}
+dd .link-move {
+    position: absolute;
+    top: 120px;
+    right: 0px;
+}
+dd .link-move a {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+dd .link-move a span {
+    display: inline-block;
+    margin-right: 7px;
+}
+dd .link-move a i {
+    font-size: 18px;
+}
+
+
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-content li {
+    width: 220px;
+    margin-right: 100px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.section-content li:last-child {
+    margin-right: 0;
+}
+.section-content li .content  {
+    text-align: left;
+    padding: 10px 20px;
+}
+
+/* 오이타 축제 oita-reservation */
+/* 오이타 쇼핑 oita-shopping */
+.oita-reservation,
+.oita-shopping  {
+    position: relative;
+    max-width: 1440px;
+    margin: 100px auto 0;
+    padding: 15px 24px;
+}
+.oita-reservation .section-title img {
+    width: 70px;
+}
+.oita-reservation .section-content,
+.oita-shopping .section-content  {
+    margin-top: 50px;
+    text-align: center;
+}
+.oita-reservation .section-content li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 300px;
+    background: url(./assets/image/slide_02.jpeg) no-repeat 40% 40% / cover;
+}
+.oita-reservation .section-content li:nth-child(2){
+    background: url(./assets/image/tour_mejiron.jpeg) no-repeat 40% 40% / cover;
+}
+.oita-reservation .section-content li:nth-child(3){
+    background: url(./assets/image/maturi02.JPG) no-repeat 40% 40% / cover;
+}
+.oita-reservation .section-content li:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(34,34,34,0.3);
+    z-index: 1;
+}
+.oita-reservation .section-content li a {
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 20px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 7px;
+    background-color: #fff;
+    transition: all 0.3s;
+    z-index: 2;
+}
+.oita-reservation .section-content li:hover a {
+    color: #fff;
+    background-color: #7F5539;
+}
+
+/* 오이타 쇼핑 oita-shopping */
+.oita-shopping .section-title img {
+    width: 32.5px;
+}
+.oita-shopping .shopping-content {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    background: url(./assets/image/slide_01.jpeg) no-repeat 40% 40% / cover;
+}
+.oita-shopping .shopping-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(34,34,34,0.4);
+}
+.oita-shopping:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    width: 1440px;
+    height: 1px;
+    background-color: #C4C4C4;
+}
+.oita-shopping .shopping-content .inn {
+    position: absolute;
+    top: 50%;
+    left: 120px;
+    transform: translateY(-50%);
+}
+.oita-shopping .shopping-content .title {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.oita-shopping .shopping-content .txt {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.oita-shopping .shopping-content .btn-more {
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 20px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 7px;
+    background-color: #fff;
+}
+.oita-shopping .shopping-content .btn-more:hover {
+    color: #fff;
+    background-color: #7F5539;
+    transition: all 0.3s;
 }
