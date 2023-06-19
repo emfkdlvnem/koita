@@ -1,7 +1,7 @@
 // main page index
 
-// carousel
 document.addEventListener('DOMContentLoaded', () => {
+    // carousel
     let slideIndex = 0; 
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
@@ -63,4 +63,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     goToSlide(0);
     resetAutoSlideTimer();
+
+
+    // 오이타 소식 category
+    const dtElements = document.querySelectorAll('.tour-category dt');
+    const ddElements = document.querySelectorAll('.tour-category dd');
+    
+    // 초기에 첫 번째 카테고리만 보이도록 설정
+    ddElements.forEach((dd, index) => {
+        if (index !== 0) {
+            dd.style.display = 'none';
+        }
+    });
+    
+    dtElements.forEach((dt, currentIndex) => {
+        dt.addEventListener('click', () => {
+            dtElements.forEach((otherDt, otherIndex) => {
+                const otherDd = ddElements[otherIndex];
+                const isActive = otherIndex === currentIndex;
+    
+                otherDt.classList.toggle('active', isActive);
+                otherDd.style.display = isActive ? 'block' : 'none';
+            });
+        });
+    });
+    
+    
+    
+    
+    
+    
+
 });
+

@@ -94,18 +94,18 @@
     left: 120px;
     transform: translateY(-50%);
 }
-.carousel .slide-area .slide .content h2 {
+.carousel .slide-area .slide .content .title {
     color: #fff;
     font-size: 18px;
     margin-bottom: 5px;
 }
-.carousel .slide-area .slide .content p {
+.carousel .slide-area .slide .content .txt {
     color: #fff;
     font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
 }
-.carousel .slide-area .slide .content a {
+.carousel .slide-area .slide .content .btn-more {
     display: inline-block;
     padding: 8px 20px;
     margin-top: 20px;
@@ -115,8 +115,21 @@
     border-radius: 7px;
     background-color: #fff;
 }
-.carousel .slide-area .slide .content a:hover {
+.carousel .slide-area .slide .content .btn-more:hover {
     color: #fff;
     background-color: #7F5539;
     transition: all 0.3s;
+}
+
+/* 오이타 소식 tour-category */
+.oita-tour {}
+.oita-tour .tour-category {
+
+}
+.oita-tour .tour-category dt .btn {
+    display: inline-block;
+    padding: 8px 20px;
+}
+.oita-tour .tour-category dt.active .btn{
+    /* background-color: #7F5539; */
 }
