@@ -353,3 +353,28 @@ dd .link-move a i {
     background-color: #7F5539;
     transition: all 0.3s;
 }
+
+
+
+/* scroll-top-btn */
+#scroll-top-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    background: none;
+    z-index: 101;
+}
+#scroll-top-btn img {
+    width: 100%;
+}
+#scroll-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}

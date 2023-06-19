@@ -96,5 +96,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const dtElements2 = document.querySelectorAll('.festival-category dt');
     const ddElements2 = document.querySelectorAll('.festival-category dd');
     initializeTourCategory(dtElements2, ddElements2);
+
+    // scroll-to-top-btn
+    function scrollToTop() {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });
+    }
+    
+    const scrollTopBtn = document.getElementById('scroll-top-btn');
+    
+    window.addEventListener('scroll', () => {
+
+        const scrollY = window.scrollY;
+    
+        if (scrollY > 500) {
+            scrollTopBtn.style.opacity = '1';
+            scrollTopBtn.style.visibility = 'visible';
+        } else {
+            scrollTopBtn.style.opacity = '0';
+            scrollTopBtn.style.visibility = 'hidden';
+        }
+    });
+    
+    scrollTopBtn.addEventListener('click', scrollToTop);
 });
 
