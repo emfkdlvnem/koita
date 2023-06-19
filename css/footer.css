@@ -1,1 +1,19 @@
 @charset "utf-8";
+
+/* footer-inn */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    z-index: 100;
+}
+.footer-inn {
+    position: relative;
+    max-width: 1440px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 15px 24px;
+}

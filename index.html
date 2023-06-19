@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- css -->
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./css/commond.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./index.css" />
     
 </head>
 <body>
@@ -21,19 +22,58 @@
         <!-- header -->
         <header class="header"></header>
         <!-- /header -->
-<!-- ------------------------------- -->
-    <!-- container -->
-    <div class="container">
-        <!-- visual-area -->
-        <div class="visual-area">
-            <div class="inn">
-                <p>text</p>
+        <!-- ------------------------------- -->
+        <!-- container -->
+        <div class="container">
+            <!-- carousel -->
+            <div class="carousel">
+                <div class="slide-area">
+                    <div class="slide page01">
+                        <div class="content">
+                            <h2>오이타 현지 소식을!</h2>
+                            <p>간편하게 오이타 소식을 전해드립니다!</p>
+                            <a href="./pages/tourist.html" class="btn more"><span>More</span></a>
+                        </div>
+                    </div>
+                    <div class="slide page02">
+                        <div class="content">
+                            <h2>오이타에 스며들기</h2>
+                            <p>현지인들과 함께 즐기는 <br/>축제 현장에 직접 참여해봐요!</p>
+                            <a href="./pages/oita-maturi.html" class="btn more"><span>More</span></a>
+                        </div>
+                    </div>
+                    <div class="slide page03">
+                        <div class="content">
+                            <h2>오이타 명물을 집에서 간편하게!</h2>
+                            <p>오이타가 자랑하는 특산품을<br/>집에서 간편하게 받아보세요!</p>
+                            <a href="./pages/oita-product.html" class="btn more"><span>More</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- indecator -->
+                <div class="indicator-area">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+                <!-- /indicator -->
+                <!-- btn-area -->
+                <div class="btn-area">
+                    <button type="button" class="btn prev">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <span class="blind">이전</span>
+                    </button>
+                    <button type="button" class="btn next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span type="button" class="blind">다음</span>
+                    </button>
+                </div>
+                <!-- /btn-area -->
             </div>
+            <!-- carousel -->
         </div>
-        <!-- visual-area -->
-    </div>
-    <!-- /container -->
-<!-- ------------------------------- -->
+        <!-- /container -->
+        <!-- ------------------------------- -->
         <!-- footer -->
         <footer class="footer"></footer>
         <!-- /footer -->
@@ -43,5 +83,6 @@
     <!-- script -->
     <script src="./js/header.js"></script>
     <script src="./js/footer.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
