@@ -10,6 +10,7 @@ const loadHeader = () => {
             addMenuToggle();
         });
 }
+
 const addMenuToggle = () => {
     const btnMenu = document.querySelector('.btn-menu');
     const menu = document.querySelector('.menu');

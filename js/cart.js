@@ -27,7 +27,6 @@ const displayCartItems = async () => {
 				<button class="remove-from-cart" data-product-id="${productId}">삭제</button>
 			</div>
 		`;
-
 		cartItemsElement.appendChild(itemElement);
 		}
 	}

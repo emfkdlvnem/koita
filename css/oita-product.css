@@ -1,30 +1,31 @@
 /* 상품 리스트 */
-.festival-product {
+.oita-product {
     max-width: 1440px;
     margin: 160px auto 0;
     padding-top: 15px 24px;
 }
-.festival-product .section-title {
+.oita-product .section-title {
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
-.festival-product .section-title span {
+.oita-product .section-title span {
     display: block;
     margin-right: 10px;
     font-size: 32px;
     line-height: 1;
 }
-.festival-product .section-title img {
+.oita-product .section-title img {
     width: 32.5px;
 }
 #product-list {
+    width: 1000px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 60px;
+    margin: 60px auto 0;
 }
 #product-list .product {
     position: relative;
