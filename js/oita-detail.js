@@ -12,38 +12,67 @@ function loadProductDetail(productId) {
 			const formattedPrice = product.price.toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' });
 
 			productDetailElement.innerHTML = `
-			<img src="${product.image}" alt="${product.title}">
-			<h2>${product.title}</h2>
-			<p>${formattedPrice}</p>
-			<p>${product.description}</p>
-			<div class="rating"></div> <!-- 별점을 표시할 요소 -->
+			<div class="thumb">
+				<img src="${product.image}" alt="${product.title}">
+			</div>
+			<div class="content">
+				<h4>${product.title}</h4>
+				<span>${formattedPrice}</span>
+				<div class="rating"></div> 
+			</div>
 			`;
 
-			const ratingElement = document.querySelector('.rating'); // 별점을 표시할 요소 선택
-			const rating = product.rating.rate; // 별점
-			const count = product.rating.count; // 리뷰 수
+			const ratingElement = document.querySelector('.rating'); 
+			const rating = product.rating.rate;
+			const count = product.rating.count; 
 
-			showRating(ratingElement, rating, count); // 별점 표시
-			initWishlistIcon(productId); // 위시리스트 아이콘 초기화
+			showRating(ratingElement, rating, count); 
+			initWishlistIcon(productId); 
 		}
 		});
 }
 
 function setupAddToCart() {
+	// const addToCartButton = document.getElementById('add-to-cart');
+	// const selectNum = document.getElementById('select-num');
 	const addToCartButton = document.getElementById('add-to-cart');
-	const selectNum = document.getElementById('select-num');
+    const decreaseQuantityButton = document.getElementById('decrease-quantity');
+    const increaseQuantityButton = document.getElementById('increase-quantity');
+    const quantityInput = document.getElementById('select-num');
+    const totalQuantityElement = document.getElementById('total-quantity');
+
+    decreaseQuantityButton.addEventListener('click', () => {
+        const currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity > 1) {
+            quantityInput.value = currentQuantity - 1;
+            updateTotalQuantity();
+        }
+    });
+
+    increaseQuantityButton.addEventListener('click', () => {
+        const currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity < 10) {
+            quantityInput.value = currentQuantity + 1;
+            updateTotalQuantity();
+        }
+    });
+
+    quantityInput.addEventListener('input', () => {
+        updateTotalQuantity();
+    });
 
 	addToCartButton.addEventListener('click', () => {
-		const quantity = parseInt(selectNum.value);
+		const quantity = parseInt(quantityInput.value);
+	// 	const quantity = parseInt(selectNum.value);
 
 		let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 		if (cartItems.find(item => item.productId === productId)) {
-		cartItems = cartItems.map(item => {
-			if (item.productId === productId) {
-				item.quantity += quantity;
-			}
-			return item;
-		});
+			cartItems = cartItems.map(item => {
+				if (item.productId === productId) {
+					item.quantity += quantity;
+				}
+				return item;
+			});
 		} else {
 			const item = { productId: productId, productType: 'festival', quantity: quantity };
 			cartItems.push(item);
@@ -54,7 +83,12 @@ function setupAddToCart() {
 
 		updateCartCount();
 	});
-	}
+
+	function updateTotalQuantity() {
+		const quantity = parseInt(quantityInput.value);
+		totalQuantityElement.textContent = `총 수량: ${quantity}`;
+	}	
+}
 
 function setupAddToWishlist() {
 	const wishlistIcon = document.querySelector('.wishlist-icon');
@@ -71,11 +105,11 @@ function toggleWishlist(productId) {
 	const existingItemIndex = wishlistItems.findIndex(item => item.productId === productId);
 
 	if (existingItemIndex !== -1) {
-		// 이미 위시리스트에 있는 상품인 경우, 상품을 삭제합니다.
+		// 이미 위시리스트에 있는 상품인 경우, 상품을 삭제
 		wishlistItems.splice(existingItemIndex, 1);
 		showWishlistPopup('removed');
 	} else {
-		// 위시리스트에 없는 상품인 경우, 상품을 추가합니다.
+		// 위시리스트에 없는 상품인 경우, 상품을 추가
 		wishlistItems.push({ productId });
 		showWishlistPopup('added');
 	}
@@ -97,11 +131,12 @@ function initWishlistIcon(productId) {
 		}
 	}
 
-	// 추가된 부분: 페이지 로딩 시 wishlist 아이콘의 상태를 유지합니다.
+	// 추가된 부분: 페이지 로딩 시 wishlist 아이콘의 상태를 유지
 	wishlistIcon.addEventListener('click', (event) => {
 		event.preventDefault();
 	});
 }
+
 function showWishlistPopup(action) {
 	const popupElement = document.getElementById('popup');
 	let message = '';
@@ -119,13 +154,52 @@ function showWishlistPopup(action) {
 	const wishlistLinkButton = document.getElementById('wishlist-link');
 	if (wishlistLinkButton) {
 		wishlistLinkButton.addEventListener('click', () => {
-			window.location.href = '../pages/wishList.html';
+		window.location.href = '../pages/wishList.html';
 		});
 	}
 
 	setTimeout(() => {
 		popupElement.style.display = 'none';
 	}, 3000);
+}
+
+function showRating(ratingElement, rating, count) {
+	ratingElement.innerHTML = ''; 
+
+	const starContainer = document.createElement('div');
+	starContainer.classList.add('stars');
+
+	for (let i = 1; i <= 5; i++) {
+		const star = document.createElement('span');
+		star.classList.add('fa', 'fa-star'); 
+
+		if (i <= rating) {
+			star.classList.add('checked');
+		} else {
+			star.classList.add('unchecked'); 
+		}
+
+		starContainer.appendChild(star);
+	}
+
+	ratingElement.appendChild(starContainer);
+
+	const countElement = document.createElement('span');
+	countElement.textContent = `(${count} reviews)`; 
+	ratingElement.appendChild(countElement);
+}
+
+function setupQuantityInput() {
+    const quantityInput = document.getElementById('select-num');
+    const totalQuantityElement = document.getElementById('total-quantity');
+
+    const defaultQuantity = parseInt(quantityInput.value);
+    totalQuantityElement.textContent = `총 수량: ${defaultQuantity}`;
+
+    quantityInput.addEventListener('input', () => {
+        const quantity = parseInt(quantityInput.value);
+        totalQuantityElement.textContent = `총 수량: ${quantity}`;
+    });
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -135,32 +209,5 @@ window.addEventListener('DOMContentLoaded', () => {
 	loadProductDetail(productId);
 	setupAddToCart();
 	setupAddToWishlist();
+	setupQuantityInput();
 });
-
-// showRating 함수를 festival-detail.js에 포함시킵니다.
-function showRating(ratingElement, rating, count) {
-  	ratingElement.innerHTML = ''; // 별점을 초기화합니다.
-
-	const starContainer = document.createElement('div');
-	starContainer.classList.add('stars');
-
-	// rating에 따라 별 모양을 생성하여 starContainer에 추가합니다.
-	for (let i = 1; i <= 5; i++) {
-		const star = document.createElement('span');
-		star.classList.add('fa', 'fa-star'); // 별 아이콘을 사용하는 경우를 가정하여 Font Awesome 클래스를 추가합니다.
-
-		if (i <= rating) {
-		star.classList.add('checked'); // rating 이하의 별에 checked 클래스를 추가하여 색상을 채웁니다.
-		} else {
-		star.classList.add('unchecked'); // rating 초과의 별에 unchecked 클래스를 추가하여 색상을 비웁니다.
-		}
-
-		starContainer.appendChild(star);
-	}
-
-	ratingElement.appendChild(starContainer);
-
-	const countElement = document.createElement('span');
-	countElement.textContent = `(${count} reviews)`; // 리뷰 수를 표시합니다.
-	ratingElement.appendChild(countElement);
-}

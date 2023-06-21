@@ -23,27 +23,41 @@
         <header class="header"></header>
         <!-- /header -->
         <!-- ------------------------------- -->
-        <!-- product-detail -->
-        <div id="product-detail"></div>
-        <!-- /product-detail -->
-        <!-- select -->
-        <div class="select">
-            <select id="select-num">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-        </div>
-        <button id="add-to-cart">Add to Cart</button>
-        <button class="wishlist-icon" data-product-id="${productId}"><i class="far fa-heart"></i></button>
-        <!-- /select -->
+        <!-- festival-detail -->
+        <section class="festival-detail">
+            <h2 class="section-title">
+                <span>오이타 명물템</span>
+                <img src="../assets/image/report_mejiron.png" alt="report_mejiron" />
+            </h2>            
+            <div class="box">
+                <!-- product-detail -->
+                <div id="product-detail"></div>
+                <!-- /product-detail -->
+    
+                <!-- producr-info -->
+                <div class="producr-info"></div>
+                <!-- /producr-info -->
+
+                <!-- select-box -->
+                <div class="select-box">
+                    <div class="quantity-input">
+                        <div class="input-area">
+                            <button id="decrease-quantity"><span class="blind">수량 빼기</span></button>
+                            <input type="text" id="select-num" value="1" min="1" max="10">
+                            <button id="increase-quantity"><spna class="blind">수량 추가</spna></button>
+                        </div>
+                        <div id="total-quantity"></div>
+                    </div>
+                    <div class="btn-area">
+                        <button id="add-to-cart"><i class="fa-solid fa-basket-shopping"></i><span>장바구니</span></button>
+                        <button class="wishlist-icon" data-product-id="${productId}"><i class="far fa-heart"></i><span>찜하기</span></button>
+                    </div>
+                </div>
+                <!-- /select-box -->
+            </div>
+        </section>
+        <!-- festival-detail -->
+
         <!-- ------------------------------- -->
         <!-- footer -->
         <footer class="footer"></footer>

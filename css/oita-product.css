@@ -1,10 +1,77 @@
+/* 상품 리스트 */
+.festival-product {
+    max-width: 1440px;
+    margin: 160px auto 0;
+    padding-top: 15px 24px;
+}
+.festival-product .section-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.festival-product .section-title span {
+    display: block;
+    margin-right: 10px;
+    font-size: 32px;
+    line-height: 1;
+}
+.festival-product .section-title img {
+    width: 32.5px;
+}
+#product-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+#product-list .product {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin-right: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+}
+
+#product-list .product:nth-child(3),
+#product-list .product:nth-child(6) {
+    margin-right: 0;
+}
+
+#product-list .product img {
+    width: 100%;
+}
+
+#product-list .product:hover .thumb::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1;
+}
+
+#product-list .product .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 2;
+}
+
+
 /* 별점 */
 .stars {
     color: #ffc107; 
 }
 
 .stars .fa-star.checked {
-    color: #ffc107; 
+    color: #ffc107;
 }
 
 .stars .fa-star.unchecked {

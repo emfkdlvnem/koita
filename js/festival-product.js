@@ -11,11 +11,17 @@ function loadProducts(jsonFile) {
 
                 return `
                     <div class="product">
-                        <img src="${product.image}" alt="${product.title}">
-                        <h2><a href="festival-detail.html?id=${product.id}">${product.title}</a></h2>
-                        <p>${formattedPrice}</p>
-                        <p>${product.description}</p>
-                        ${ratingHtml} <!-- 별점 아이콘 -->
+                        <a href="festival-detail.html?id=${product.id}">                        
+                            <div class="thumb">
+                                <img src="${product.image}" alt="${product.title}">
+                            </div>    
+                            <div class="content">
+                                <h3>${product.title}</h3>
+                                <span>${formattedPrice}</span>
+                                <p>${product.description}</p>
+                                ${ratingHtml} <!-- 별점 아이콘 -->
+                            </div>
+                        </a>
                     </div>
                 `;
             }).join('');

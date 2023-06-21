@@ -1,12 +1,234 @@
-/* 별점 */
-.stars {
-    color: #ffc107; 
-}
-
-.stars .fa-star.checked {
-    color: #ffc107; 
-}
-
-.stars .fa-star.unchecked {
-    color: #ddd; 
-}
+/* 상품 상세페이지 */
+.festival-detail {
+    max-width: 1440px;
+    margin: 160px auto 0;
+    padding-top: 15px 24px;
+  }
+  .festival-detail .section-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .festival-detail .section-title span {
+    display: block;
+    margin-right: 10px;
+    font-size: 32px;
+    line-height: 1;
+  }
+  .festival-detail .section-title img {
+    width: 32.5px;
+  }
+  .festival-detail .box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 500px;
+    margin:50px auto;
+    border: 1px solid #c4c4c4;
+  }
+  
+  .festival-detail .box::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    background-color: #c4c4c4;
+    width: 1px;
+    height: 500px;
+  }
+  
+  #product-detail {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+  }
+  #product-detail .thumb {
+    width: 500px;
+    padding: 20px 40px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #product-detail .thumb img {
+    width: 220px;
+  }
+  #product-detail .thumb p {
+    margin-top: 20px;
+  }
+  #product-detail .content {
+    width: 500px;
+    padding: 20px 40px;
+    margin: 0 auto;
+  }
+  #product-detail .content h4 {
+    font-size: 24px;
+  }
+  #product-detail .content > span {
+    display: block;
+    text-align: right;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  #product-detail .content .rating {
+    text-align: right;
+  }
+  
+  /* select-box */
+  .select-box {
+    position: absolute;
+    right: 30px;
+    top: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .select-box .quantity-input {
+    display: flex;
+    align-items: center;
+  }
+  .select-box .quantity-input #total-quantity {
+    width: 100px;
+    margin-left: 10px;
+    text-align: right;
+  }
+  .select-box .quantity-input .input-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .select-box .quantity-input .input-area {
+    border:  1px solid #c4c4c4;
+  }
+  
+  .select-box .quantity-input button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #fff;
+  }
+  .select-box .quantity-input button:hover {
+    transition: all 0.3s;
+    background-color: #c4c4c4;
+  }
+  .select-box .quantity-input .input-area * {
+    display: block;
+    text-align: center;
+  }
+  .select-box .quantity-input #decrease-quantity::before,
+  .select-box .quantity-input #increase-quantity::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 11px;
+    height: 2px;
+    transform: translate(-50%);
+    background-color: #000;
+  }
+  .select-box .quantity-input #increase-quantity::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2px;
+    height: 10px;
+    margin: -4px 0 0;
+    transform: translate(-50%);
+    background-color: #000;
+  }
+  .select-box .quantity-input #select-num {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #c4c4c4;
+    border-right: 1px solid #c4c4c4;
+    border-radius: 0;
+  }
+  .select-box .btn-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .select-box .btn-area button {
+    width: 130px;
+    height: 40px;
+    padding: 8px 20px;
+    border: 1px solid #7F5539;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .select-box .btn-area button:hover {
+    color: #fff;
+    transition: all 0.3s;
+    background-color: #7F5539;
+  }
+  .select-box .btn-area .wishlist-icon {
+    margin-left: 10px;
+  }
+  .select-box .btn-area button span {
+    display: inline-block;
+    padding-left: 5px;
+  }
+  /* 별점 */
+  .stars {
+      color: #ffc107; 
+  }
+  
+  .stars .fa-star.checked {
+      color: #ffc107; 
+  }
+  
+  .stars .fa-star.unchecked {
+      color: #ddd; 
+  }
+  
+  /* 위시리스트 아이콘 스타일 */
+  .wishlist-icon.active i {
+    color: red;
+  }
+  
+  /* 팝업 */
+  #popup {
+    display: none;
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%, -70%);
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+  }
+  
+  #popup p {
+    margin: 0;
+  }
+  
+  #popup a {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  #popup a:hover {
+    text-decoration: underline;
+  }
+  
+  #popup #wishlist-link {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #popup #wishlist-link:hover {
+    color: #fff;
+    font-weight: 700;
+    background-color: #7F5539;
+  }
+  

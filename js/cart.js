@@ -30,7 +30,7 @@ const displayCartItems = async () => {
 
 		cartItemsElement.appendChild(itemElement);
 		}
-		}
+	}
 
 	attachRemoveFromCartListeners();
 };
