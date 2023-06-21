@@ -8,12 +8,16 @@
     
     <!-- fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     <!-- css -->
     <link rel="stylesheet" href="./css/commond.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./css/api.css">
+    
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     
 </head>
 <body>
@@ -308,6 +312,19 @@
             </section>
             <!-- /oita-shopping -->
 
+            <!-- weather api -->
+            <section class="weather">
+                <h2 class="section-title">
+                    <span>날씨 정보</span>
+                    <img src="./assets/image/weather01.png" alt="weather01" />
+                </h2>
+                <aside class="weather-content">
+                    <div class="content korea-weather-content"></div>
+                    <div class="content japan-weather-content"></div>
+                </aside>
+            </section>
+            <!-- /weather api -->
+
             <!-- scroll-top-btn -->
             <button id="scroll-top-btn" class="btn scroll" title="위로 올라가기">
                 <img src="./assets/image/page_top_btn.png" alt="scroll-top-btn" />
@@ -325,6 +342,6 @@
     <!-- script -->
     <script src="./js/header.js"></script>
     <script src="./js/footer.js"></script>
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
 </body>
 </html>
