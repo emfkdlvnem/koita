@@ -1,6 +1,4 @@
 // 날씨 api
-// import axios from 'axios';
-// OpenWeatherMap API 호출 함수
 function getWeatherData() {
     const apiKey = '80b62e0ba0594a2abdf181533232106';
     const koreaUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Seoul,Korea&lang=kr`;
@@ -25,5 +23,25 @@ function getWeatherData() {
     return Promise.all([koreaWeatherPromise, japanWeatherPromise]);
 }
 
-export { getWeatherData };
+
 // youtube api
+function getYouTubeData() {
+    const youtubeApiKey = 'AIzaSyCokCMiB2t_sqo7NMZfSY-duv0WzFoIq88';
+    const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeApiKey}&part=snippet&q=Oita&maxResults=10`;
+
+    // 유튜브 API 호출
+    const youtubeDataPromise = axios.get(youtubeUrl)
+        .then(response => response.data)
+        .catch(error => {
+            console.error('유튜브 API 오류:', error);
+            throw error;
+        });
+
+    return Promise.all([youtubeDataPromise]);
+}
+
+
+export { getWeatherData, getYouTubeData };
+
+
+

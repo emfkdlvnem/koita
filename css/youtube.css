@@ -1,0 +1,68 @@
+/* 유튜브 api */
+.youtube {
+    position: relative;
+    max-width: 1440px;
+    margin: 100px auto 150px;
+    padding: 15px 24px;
+}
+.youtube .section-title {
+    align-items: center;
+}
+.youtube .section-title img {
+    width: 64px;
+    border-radius: 50%;
+} 
+.youtube .content-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.youtube .content-list .video-item {
+    width: 48%;
+    margin: 0 auto;
+    text-align: center;
+}
+.youtube .content-list .video-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* youtube 팝업 */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; 
+}
+.youtube-popup {
+    position: relative;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+.popup .popup-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.popup .popup-box .close-btn {
+    position: absolute;
+    top: -14px;
+    right: -35px;
+    color: #fff;
+    font-size: 40px;
+    border: none;
+    background: none;
+}
