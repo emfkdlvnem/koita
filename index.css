@@ -1,4 +1,4 @@
-/* main page  index */
+/* main page index */
 .container {
     position: relative;
     padding-top: 100px;
@@ -20,7 +20,7 @@
     z-index: 1;
 }
 .carousel .slide-area .slide.page02 {
-    background: url(./assets/image/maturi01.JPG) no-repeat 40% 40% / cover;
+    background: url(./assets/image/slide_02.JPG) no-repeat 40% 40% / cover;
 }
 .carousel .slide-area .slide.page03 {
     background: url(./assets/image/slide_03.jpg) no-repeat 40% 65% / cover;
@@ -220,7 +220,7 @@ dd .link-move a i {
     justify-content: center;
 }
 .section-content li {
-    width: 220px;
+    width: 280px;
     margin-right: 100px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
@@ -228,17 +228,20 @@ dd .link-move a i {
     margin-right: 0;
 }
 .section-content li .thumb {
-    width: 220px;
+    width: 280px;
+    height: 180px;
 }
 .section-content li .thumb img {
     width: 100%;
+    height: 100%;
 }
 .section-content li .content  {
     text-align: left;
-    padding: 15px 20px 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
 }
 .section-content li .content p {
-    height: 120px;
+    height: 150px;
     margin-top: 10px;
 }
 /* 오이타 축제 oita-reservation */
@@ -275,15 +278,15 @@ dd .link-move a i {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 220px;
-    height: 300px;
-    background: url(./assets/image/slide_02.jpeg) no-repeat 40% 40% / cover;
+    width: 280px;
+    height: 350px;
+    background: url(./assets/image/main-reservation01.jpg) no-repeat 40% 40% / cover;
 }
 .oita-reservation .section-content li:nth-child(2){
-    background: url(./assets/image/tour_mejiron.jpeg) no-repeat 40% 40% / cover;
+    background: url(./assets/image/main-reservation02.jpg) no-repeat 40% 40% / cover;
 }
 .oita-reservation .section-content li:nth-child(3){
-    background: url(./assets/image/maturi02.JPG) no-repeat 40% 40% / cover;
+    background: url(./assets/image/main-reservation03.jpg) no-repeat 40% 40% / cover;
 }
 .oita-reservation .section-content li:hover::before {
     content: '';
@@ -294,6 +297,26 @@ dd .link-move a i {
     bottom: 0;
     background-color: rgba(34,34,34,0.3);
     z-index: 1;
+}
+.oita-reservation .section-content li::after {
+    content: '숙박';
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 55px;
+    height: 30px;
+    color: #000;
+    font-weight: 700;
+    line-height: 30px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+}
+.oita-reservation .section-content li:nth-child(2):after {
+    content: '항공';
+}
+.oita-reservation .section-content li:nth-child(3):after {
+    content: '해상';
 }
 .oita-reservation .section-content li a {
     display: inline-block;
