@@ -244,7 +244,8 @@ dd .link-move a i {
     height: 100px;
     margin-top: 5px;
 }
-/* 오이타 축제 oita-reservation */
+
+/* 오이타 여행 oita-reservation */
 /* 오이타 쇼핑 oita-shopping */
 .oita-reservation,
 .oita-shopping  {
@@ -261,7 +262,6 @@ dd .link-move a i {
     margin-top: 50px;
     text-align: center;
 }
-
 
 .oita-reservation::before,
 .oita-shopping:before {
@@ -387,6 +387,87 @@ dd .link-move a i {
     background-color: #7F5539;
     transition: all 0.3s;
 }
+
+/* 고객문의 contact */
+.contact {
+    position: relative;
+    max-width: 1440px;
+    margin: 100px auto 0;
+    padding: 15px 24px;
+}
+.contact .sub-area {
+    position: relative;
+}
+.contact .sub-area .sub-title {
+    font-size: 20px;
+    text-align: center;
+    margin: 50px auto;
+}
+.contact .sub-area .btn-more {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    display: block;
+}
+.contact .contact-list .contact-item {
+    width: 700px;
+    padding: 20px;
+    margin: 0 auto 30px;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+}
+.contact .contact-list .contact-item .content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+.contact .contact-list .contact-item.active .content {
+    margin-bottom: 30px;
+}
+.contact .contact-list .contact-item .content::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    width: 660px;
+    height: 1px;
+    background-color: #C4C4C4;
+    opacity: 0;
+}
+.contact .contact-list .contact-item.active .content::before {
+    opacity: 1;
+}
+.contact .contact-list .contact-item .content .title {
+    font-size: 18px;
+}
+.contact .contact-list .contact-item .content .btn {
+    border: none;
+    background: none;
+}
+.contact .contact-list .contact-item .content .btn i {
+    color: #7F5539;
+    font-size: 30px;
+    transition: transform 0.5s ease;
+}
+.contact .contact-list .contact-item.active .content .btn i {
+    transform: rotate(180deg);
+}
+.contact-list .contact-item:first-child .txt {
+    max-height: 200px;
+}
+.contact .contact-list .contact-item .txt {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.contact .contact-list .contact-item .txt.active {
+    max-height: 200px; /* 적절한 높이로 조정 */
+    transition: max-height 0.5s ease;
+}
+
 
 /* scroll-top-btn */
 #scroll-top-btn {
