@@ -8,9 +8,9 @@ function createVideoList(videos) {
     contentList.innerHTML = videos.map(video => `
         <div class="video-item">
             <a href="#" data-video-id="${video.videoId}" data-video-title="${video.title}">
-                <p>${video.title}</p>
+                <p class="title">${video.title}</p>
                 <div class="thumb">
-                    <img src="${video.thumbnail}" alt="${video.title}">
+                    <img src="${getLargeThumbnailUrl(video.thumbnail)}" alt="${video.title}">
                 </div>
             </a>
         </div>
@@ -97,7 +97,10 @@ function getCustomVideos() {
 
     return Promise.resolve(customVideos);
 }
-
+function getLargeThumbnailUrl(thumbnail) {
+    const largeThumbnailUrl = thumbnail.replace('/default.jpg', '/maxresdefault.jpg');
+    return largeThumbnailUrl;
+}
 export function loadYouTubeData() {
     getCustomVideos()
     .then(videos => {

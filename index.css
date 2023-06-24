@@ -227,11 +227,20 @@ dd .link-move a i {
 .section-content li:last-child {
     margin-right: 0;
 }
+.section-content li .thumb {
+    width: 220px;
+}
+.section-content li .thumb img {
+    width: 100%;
+}
 .section-content li .content  {
     text-align: left;
-    padding: 10px 20px;
+    padding: 15px 20px 10px;
 }
-
+.section-content li .content p {
+    height: 120px;
+    margin-top: 10px;
+}
 /* 오이타 축제 oita-reservation */
 /* 오이타 쇼핑 oita-shopping */
 .oita-reservation,

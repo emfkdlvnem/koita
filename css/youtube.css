@@ -21,13 +21,32 @@
 }
 .youtube .content-list .video-item {
     width: 48%;
-    margin: 0 auto;
+    margin: 0 auto 50px;
     text-align: center;
+}
+.youtube .content-list .video-item a {
+    position: relative;
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}
+.youtube .content-list .video-item a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: url(../assets/image/play_btn.svg) 0 0 / cover no-repeat;
+}
+.youtube .content-list .video-item .title {
+    font-size: 20px;
+    font-weight: 700;
 }
 .youtube .content-list .video-item img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
 }
 
 /* youtube 팝업 */

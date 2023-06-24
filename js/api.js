@@ -43,5 +43,3 @@ function getYouTubeData() {
 
 export { getWeatherData, getYouTubeData };
 
-
-
