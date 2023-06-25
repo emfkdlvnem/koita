@@ -2,44 +2,108 @@
     position: relative;
     max-width: 1440px;
     margin: 150px auto 0px;
-    padding: 15px 24px;
+    padding: 15px 24px 100px;
 }
 .cart-inn .title {
     font-size: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 }
 #cart-items {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    width: 500px;
-    padding: 20px;
-    border: 1px solid #c4c4c4;
+    position: relative;
+}
+#cart-items .txt-none {
+    font-size: 20px;
 }
 #cart-items .cart-item {
+    position: relative;
+    width: 600px;
+    height: 150px;
     display: flex;
     align-items: center;
     margin-bottom: 30px;
 }
+#cart-items::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -50px;
+    width: 100%;
+    height: 1px;
+    background-color: #c4c4c4;
+}
 #cart-items .cart-item .thumb {
     width: 150px;
-    margin-right: 20px;
+    margin-right: 100px;
     border: 1px solid #c4c4c4;
 }
 #cart-items .cart-item .thumb img {
     width: 100%;
 }
-
+/* cart product list */
 .item-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
 }
+.item-details span {
+    display: inline-block;
+}
+.item-details .item-title {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.item-details button {
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+.item-details button:hover {
+    color: #fff;
+    background-color: #7F5539;
+    transition: all 0.3s;
+}
 
 /* total */
 .cart-summary {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 20px;
+    top: 0px;
+    width: 400px;
+    height: 300px;
+    padding: 30px;
+    margin: 0 auto;
+    border: 1px solid #c4c4c4;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+.cart-summary span {
+    display: inline-block;
+}
+.cart-summary .summary-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.cart-summary .summary-value {
+    font-size: 22px;
+    font-weight: 700;
+}
+.cart-summary button {
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 70px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 7px;
+    background-color: #fff;
+}
+.cart-summary button:hover {
+    color: #fff;
+    background-color: #7F5539;
+    transition: all 0.3s;
 }

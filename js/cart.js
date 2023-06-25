@@ -2,12 +2,29 @@ const displayCartItems = async () => {
 	const cartItemsElement = document.getElementById('cart-items');
 	const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-	if (cartItems.length === 0) {
-		cartItemsElement.innerHTML = '<p>장바구니가 비어있습니다.<i class="fas fa-shopping-cart"></i></p>';
-	} else {
-		cartItemsElement.innerHTML = '';
+	cartItemsElement.innerHTML = '';
 
-		const productGroups = groupProductsByType(cartItems); 
+	if (cartItems.length === 0) {
+		cartItemsElement.innerHTML = '<p class="txt-none">장바구니가 비어있습니다. <i class="fas fa-shopping-cart"></i></p>';
+		cartItemsElement.style.marginBottom = '400px'
+
+		const summaryElement = document.createElement('div');
+		summaryElement.classList.add('cart-summary');
+		summaryElement.innerHTML = `
+			<div class="summary-details">
+				<span class="summary-title">총 합계:</span>
+				<span class="summary-value">0</span>
+			</div>
+			<div class="summary-details">
+				<span class="summary-title">결제 예정 금액:</span>
+				<span class="summary-value">0</span>
+			</div>
+			<button type="button" disabled><span>총 0개 구매하기</span></button>
+		`;
+		cartItemsElement.appendChild(summaryElement);
+	} else {
+		cartItemsElement.style.marginBottom = '200px';
+		const productGroups = groupProductsByType(cartItems);
 		let totalQuantity = 0;
 		let totalPrice = 0;
 
@@ -55,7 +72,6 @@ const displayCartItems = async () => {
 
 	attachRemoveFromCartListeners();
 };
-
 const groupProductsByType = (cartItems) => {
 	const productGroups = {};
 
@@ -72,13 +88,12 @@ const groupProductsByType = (cartItems) => {
 
 const getProductById = async (productId) => {
 	const jsonFilePath = getProductJsonFilePath(productId);
-	const products = await loadProductsFromJson(jsonFilePath);
-
+	const products = await loadProductsFromJson(jsonFilePath);  
 	const parsedProductId = parseInt(productId);
 	const product = products.find((product) => product.id === parsedProductId);
 
 	return product ? product : { image: '', title: '', price: 0 };
-};
+};  
 
 const getProductJsonFilePath = (productId) => {
 	if (productId >= 1 && productId <= 6) {
@@ -125,12 +140,5 @@ const removeProductFromCart = (productId, productType) => {
 window.onload = () => {
 	displayCartItems();
 };
-
-
-
-
-
-
-
 
 
