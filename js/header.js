@@ -39,6 +39,10 @@ const getCartCount = () => {
 };
 
 
+
+
+
+
 window.updateCartCount = updateCartCount;
 
 loadHeader();
