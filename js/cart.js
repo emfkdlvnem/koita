@@ -5,7 +5,7 @@ const displayCartItems = async () => {
 	cartItemsElement.innerHTML = '';
 
 	if (cartItems.length === 0) {
-		cartItemsElement.innerHTML = '<p class="txt-none">장바구니가 비어있습니다. <i class="fas fa-shopping-cart"></i></p>';
+		cartItemsElement.innerHTML = '<p class="txt-none">장바구니가 비어있습니다. <i class="fa-regular fa-file-lines"></i></p>';
 		cartItemsElement.style.marginBottom = '400px'
 
 		const summaryElement = document.createElement('div');
