@@ -23,7 +23,6 @@
     display: flex;
     flex-direction: column;
     width: 1000px;
-    height: 500px;
     margin:50px auto;
     border: 1px solid #c4c4c4;
   }
@@ -43,7 +42,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 50px;
   }
   #product-detail .thumb {
     width: 500px;
@@ -52,15 +50,12 @@
     text-align: center;
   }
   #product-detail .thumb img {
-    width: 220px;
-  }
-  #product-detail .thumb p {
-    margin-top: 20px;
+    width: 100%;
   }
   #product-detail .content {
     width: 500px;
     padding: 20px 40px;
-    margin: 0 auto;
+    margin: 50px auto 0;
   }
   #product-detail .content h4 {
     font-size: 24px;

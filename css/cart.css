@@ -1,3 +1,25 @@
 .cart-inn {
-    padding-top: 100px;
+    position: relative;
+    max-width: 1440px;
+    margin: 150px auto 0px;
+    padding: 15px 24px;
+}
+.cart-inn .title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+#cart-items {
+    border: 1px solid #c4c4c4;
+}
+#cart-items .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#cart-items .cart-item .thumb {
+    width: 150px;
+    border: 1px solid #c4c4c4;
+}
+#cart-items .cart-item .thumb img {
+    width: 100%;
 }

@@ -1,6 +1,7 @@
 import { getWeatherData, getYouTubeData } from './js/api.js';
 import { loadWeatherData } from './js/weather.js';
 import { loadYouTubeData } from './js/youtube.js';
+import { initializeContactItems, setupInitialContact } from './js/contact.js';
 
 // main page index
 document.addEventListener('DOMContentLoaded', () => {
@@ -102,44 +103,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // contact 고객문의
-    const buttons = document.querySelectorAll('.btn-show');
+    // const buttons = document.querySelectorAll('.btn-show');
 
-    buttons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            const parent = button.closest('.contact-item');
-            const txt = parent.querySelector('.txt');
+    // buttons.forEach((button, index) => {
+    //     button.addEventListener('click', () => {
+    //         const parent = button.closest('.contact-item');
+    //         const txt = parent.querySelector('.txt');
         
-            // 다른 contact-item의 txt 닫기
-            const activeItems = document.querySelectorAll('.contact-item.active');
-            activeItems.forEach((item) => {
-                if (item !== parent) {
-                    item.classList.remove('active');
-                    const activeTxt = item.querySelector('.txt');
-                    activeTxt.classList.remove('active');
-                    activeTxt.style.maxHeight = '0';
-                }
-            });
+    //         // 다른 contact-item의 txt 닫기
+    //         const activeItems = document.querySelectorAll('.contact-item.active');
+    //         activeItems.forEach((item) => {
+    //             if (item !== parent) {
+    //                 item.classList.remove('active');
+    //                 const activeTxt = item.querySelector('.txt');
+    //                 activeTxt.classList.remove('active');
+    //                 activeTxt.style.maxHeight = '0';
+    //             }
+    //         });
         
-            // 토글 기능
-            parent.classList.toggle('active');
-            txt.classList.toggle('active');
+    //         // 토글 기능
+    //         parent.classList.toggle('active');
+    //         txt.classList.toggle('active');
         
-            if (parent.classList.contains('active')) {
-                txt.style.maxHeight = txt.scrollHeight + 'px';
-            } else {
-                txt.style.maxHeight = '0';
-            }
-        });
+    //         if (parent.classList.contains('active')) {
+    //             txt.style.maxHeight = txt.scrollHeight + 'px';
+    //         } else {
+    //             txt.style.maxHeight = '0';
+    //         }
+    //     });
         
-        // 첫 번째 contact-item 초기 상태 설정
-        if (index === 0) {
-            const parent = button.closest('.contact-item');
-            const txt = parent.querySelector('.txt');
-            parent.classList.add('active');
-            txt.classList.add('active');
-            txt.style.maxHeight = txt.scrollHeight + 'px';
-        }
-    });
+    //     // 첫 번째 contact-item 초기 상태 설정
+    //     if (index === 0) {
+    //         const parent = button.closest('.contact-item');
+    //         const txt = parent.querySelector('.txt');
+    //         parent.classList.add('active');
+    //         txt.classList.add('active');
+    //         txt.style.maxHeight = txt.scrollHeight + 'px';
+    //     }
+    // });
+    initializeContactItems();
+    setupInitialContact();
 
 
     // scroll-to-top-btn

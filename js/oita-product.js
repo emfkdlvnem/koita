@@ -16,9 +16,9 @@ function loadProducts(jsonFile) {
                                 <img src="${product.image}" alt="${product.title}">
                             </div>    
                             <div class="content">
-                                <h3>${product.title}</h3>
-                                <span>${formattedPrice}</span>
-                                <p>${product.description}</p>
+                                <h3 class="title">${product.title}</h3>
+                                <span class="price">${formattedPrice}</span>
+                                <p class="txt">${product.description}</p>
                                 ${ratingHtml} <!-- 별점 아이콘 -->
                             </div>
                         </a>

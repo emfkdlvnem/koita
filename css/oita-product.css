@@ -30,7 +30,7 @@
 #product-list .product {
     position: relative;
     width: 300px;
-    height: 400px;
+    height: 470px;
     margin-right: 50px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 50px;
@@ -41,10 +41,16 @@
     margin-right: 0;
 }
 
+#product-list .product .thumb {
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 1px solid #c4c4c4;
+}
 #product-list .product img {
     width: 100%;
+    height: 100%;
 }
-
 #product-list .product:hover .thumb::before {
     content: '';
     position: absolute;
@@ -64,7 +70,18 @@
     padding: 20px;
     z-index: 2;
 }
-
+#product-list .product .content .title {
+    margin-bottom: 5px;
+}
+#product-list .product .content .price {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+#product-list .product .content .txt {
+    margin-bottom: 5px;
+}
 
 /* 별점 */
 .stars {
