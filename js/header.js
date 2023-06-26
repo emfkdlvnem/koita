@@ -1,4 +1,5 @@
 import { updateLoginButton } from './auth.js';
+import { auth } from './firebaseConfig.js';
 
 const loadHeader = () => {
     const header = document.querySelector('.header');
@@ -11,9 +12,19 @@ const loadHeader = () => {
             updateCartCount();
             addMenuToggle();
             updateLoginButton();
+            checkLoginStatus();
         });
 }
 
+const checkLoginStatus = () => {
+    document.querySelector('.my-page .btn-wish-list').addEventListener('click', (event) => {
+        const user = auth.currentUser;
+        if (!user) {
+            event.preventDefault();
+            alert('로그인을 해주세요.');
+        }
+    });
+}
 
 const addMenuToggle = () => {
     const btnMenu = document.querySelector('.btn-menu');
@@ -41,10 +52,6 @@ const getCartCount = () => {
     const totalQuantity = Object.values(cartItems).reduce((sum, item) => sum + item.quantity, 0);
     return totalQuantity;
 };
-
-
-
-
 
 window.updateCartCount = updateCartCount;
 
