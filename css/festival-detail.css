@@ -34,7 +34,7 @@
   top: 0;
   background-color: #c4c4c4;
   width: 1px;
-  height: 500px;
+  height: 100%;
 }
 
 #product-detail {
@@ -185,45 +185,36 @@
 }
 
 /* 위시리스트 아이콘 스타일 */
-.wishlist-icon.active i {
-  color: red;
+#add-to-wishlist.active {
+  color: #fff;
+  background-color: #7F5539;
 }
 
 /* 팝업 */
 #popup {
   display: none;
   position: fixed;
-  top: 70%;
-  left: 50%;
+  top: 60%;
+  left: 70%;
   padding: 20px;
-  transform: translate(-50%, -70%);
+  transform: translate(-60%, -70%);
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   background-color: #fff;
 }
-
-#popup p {
-  margin: 0;
-}
-
 #popup a {
-  color: blue;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   text-decoration: none;
 }
 
 #popup a:hover {
-  text-decoration: underline;
-}
-
-#popup #wishlist-link {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-}
-
-#popup #wishlist-link:hover {
   color: #fff;
-  font-weight: 700;
+  transition: all 0.3s;
   background-color: #7F5539;
 }

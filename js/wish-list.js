@@ -1,46 +1,39 @@
-// wishList.js
-document.addEventListener('DOMContentLoaded', () => {
-    const wishListElement = document.getElementById('wish-list');
-    const wishlistItems = JSON.parse(localStorage.getItem('wishlistItems')) || [];
+function loadWishlist() {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-    if (wishlistItems.length === 0) {
-		wishListElement.innerHTML = '<p>No items in your wish list.</p>';
-    } else {
-		const productList = document.createElement('ul');
-		productList.classList.add('product-list');
+    const wishlistContainer = document.getElementById('wishlist-container');
 
-		wishlistItems.forEach(item => {
-			const productItem = document.createElement('li');
-			productItem.classList.add('product-item');
+    wishlist.forEach(productId => {
+        fetch(`../data/festival.json`)  // 상품 데이터의 URL
+            .then(response => response.json())
+            .then(products => {
+                const product = products.find(p => p.id === parseInt(productId));
+                if (product) {
+                    const productElement = document.createElement('div');
 
-			const productTitle = document.createElement('h3');
-			productTitle.textContent = item.title;
-			productItem.appendChild(productTitle);
+                    const formattedPrice = product.price.toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' });
 
-			const removeButton = document.createElement('button');
-			removeButton.textContent = 'Remove';
-			removeButton.classList.add('remove-button');
-			removeButton.addEventListener('click', () => {
-				removeFromWishList(item.productId);
-			});
-			productItem.appendChild(removeButton);
+                    productElement.innerHTML = `
+                    <div class="thumb">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="content">
+                        <h4>${product.title}</h4>
+                        <span>${formattedPrice}</span>
+                        <div class="rating"></div> 
+                    </div>
+                    `;
 
-			productList.appendChild(productItem);
-		});
+                    const ratingElement = productElement.querySelector('.rating'); 
+                    const rating = product.rating.rate;
+                    const count = product.rating.count; 
 
-		wishListElement.appendChild(productList);
-    }
-});
+                    showRating(ratingElement, rating, count);  // 평점 표시
 
-function removeFromWishList(productId) {
-	let wishlistItems = JSON.parse(localStorage.getItem('wishlistItems')) || [];
-	const existingItemIndex = wishlistItems.findIndex(item => item.productId === productId);
-
-	if (existingItemIndex !== -1) {
-		wishlistItems.splice(existingItemIndex, 1);
-		localStorage.setItem('wishlistItems', JSON.stringify(wishlistItems));
-
-		// Refresh the page to update the wishlist
-		location.reload();
-	}
+                    wishlistContainer.appendChild(productElement);
+                }
+            });
+    });
 }
+
+window.addEventListener('DOMContentLoaded', loadWishlist);
