@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/commond.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+
+</head>
+<body>
+    <!-- wrap -->
+    <div class="wrap">
+        <!-- header -->
+        <header class="header"></header>
+        <!-- /header -->
+        <!-- ------------------------------- -->
+        <!-- login-area -->
+        <section class="login-area">
+            <h2 class="section-title">
+                <span>WELCOME!</span>
+                <img src="../assets/image/logo.png" alt="logo"/>
+            </h2>
+            <div class="social-area">
+                <a href="./social.html" class="btn btn-social-move"><span>구글로 로그인 하기</span></a>
+            </div>
+            <form class="login-form">
+                <div>
+                    이메일 : <input type="email" id="email-login" placeholder="이메일" >
+                </div>
+                <div>
+                    패스워드 : <input type="password" id="password-login" placeholder="패스워드" >
+                </div>
+                <button type="submit" id="btn-login">로그인 하기</button>
+            </form>
+            <a href="./signup.html" id="btn-signup" class="btn btn-signup-move"><span>회원가입 하러 가기</span></a>
+        </section>
+        <!-- /login-area -->
+        <!-- ------------------------------- -->
+        <!-- footer -->
+        <footer class="footer"></footer>
+        <!-- /footer -->
+    </div>
+    <!-- /wrap -->
+    <!-- <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCokCMiB2t_sqo7NMZfSY-duv0WzFoIq88",
+            authDomain: "koita-1c079.firebaseapp.com",
+            projectId: "koita-1c079",
+            storageBucket: "koita-1c079.appspot.com",
+            messagingSenderId: "240009170899",
+            appId: "1:240009170899:web:f9544fdb8a50ee45e56926",
+            measurementId: "G-93MHVB0GZP"
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            //Initialize firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const auth = getAuth();
+            // 일반 회원가입
+            document.getElementById('btn-signup').addEventListener('click', (event) => {
+                event.preventDefault()
+                const emailSignup = document.getElementById('email-signup').value
+                const passwordSignup = document.getElementById('password-signup').value
+                
+                createUserWithEmailAndPassword(auth, emailSignup, passwordSignup)
+                    .then((userCredential) => {
+                        console.log(userCredential)
+                        // Signed in 
+                        const user = userCredential.user;
+                        // ...
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        
+                        console.log('error', error);
+                        console.log('Error Code:', error.code);
+                        console.log('Error Message:', error.message);
+                    });
+            });
+            
+            // 일반 로그인
+            document.getElementById('btn-login').addEventListener('click', (event) => {
+                const emailLogin = document.getElementById('email-login').value
+                const passwordLogin = document.getElementById('password-login').value
+            
+                signInWithEmailAndPassword(auth, emailLogin, passwordLogin)
+                    .then((userCredential) => {
+                        console.log(userCredential)
+                        // Signed in 
+                        const user = userCredential.user;
+                        // ...
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        
+                        console.log('로그인 실패', error);
+                        console.log('Error Code:', error.code);
+                        console.log('Error Message:', error.message);
+                    });
+            });
+            console.log('welcome to koita');
+            console.log(app);
+        })
+    </script> -->
+    <!-- script -->
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script type="module" src="../js/login.js"></script>
+</body>
+</html>
