@@ -39,7 +39,7 @@
                 <button type="submit" id="btn-signup">회원가입 하기</button>
                 <button>로그인 하러 가기</button>
             </form> -->
-            <button>Google login</button>
+            <button id="btn-social-login">Google login</button>
         </section>
         <!-- /social-area -->
         <!-- ------------------------------- -->
@@ -69,25 +69,30 @@
         const auth = getAuth();
         const provider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
-                const user = result.user;
-                // IdP data available using getAdditionalUserInfo(result)
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
+        document.getElementById('btn-social-login').addEventListener('click', (event) => {
+            console.log('google login clicked')
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    // This gives you a Google Access Token. You can use it to access the Google API.
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    // The signed-in user info.
+                    const user = result.user;
+                    // IdP data available using getAdditionalUserInfo(result)
+                    console.log(result);
+                    // ...
+                }).catch((error) => {
+                    // Handle Errors here.
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // The email of the user's account used.
+                    const email = error.customData.email;
+                    // The AuthCredential type that was used.
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+                    console.log(error);
+                    // ...
+                });
+        })
 
     </script> 
 
