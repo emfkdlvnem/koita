@@ -1,3 +1,5 @@
+import { updateLoginButton } from './auth.js';
+
 const loadHeader = () => {
     const header = document.querySelector('.header');
     const headerURL = '../components/header.html';
@@ -8,8 +10,10 @@ const loadHeader = () => {
             header.innerHTML = data;
             updateCartCount();
             addMenuToggle();
+            updateLoginButton();
         });
 }
+
 
 const addMenuToggle = () => {
     const btnMenu = document.querySelector('.btn-menu');
@@ -37,7 +41,6 @@ const getCartCount = () => {
     const totalQuantity = Object.values(cartItems).reduce((sum, item) => sum + item.quantity, 0);
     return totalQuantity;
 };
-
 
 
 
