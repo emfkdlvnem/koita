@@ -26,8 +26,8 @@ function getWeatherData() {
 
 // youtube api
 function getYouTubeData() {
-    const youtubeApiKey = 'AIzaSyCokCMiB2t_sqo7NMZfSY-duv0WzFoIq88';
-    const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeApiKey}&part=snippet&q=Oita&maxResults=10`;
+    // const youtubeApiKey = 'AIzaSyDoSnXhlTJyL0bXj3p52a1q7HsOkGS2Y4s';
+    // const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeApiKey}&part=snippet&q=Oita&maxResults=10`;
 
     // 유튜브 API 호출
     const youtubeDataPromise = axios.get(youtubeUrl)
