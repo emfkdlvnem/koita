@@ -24,6 +24,25 @@
     justify-content: flex-end;
 }
 
+.login-section {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.login-section a {
+    display: block;
+    width: 60px;
+}
+.login-section span {
+    display: block;
+    width: 10px;
+}
+
+#header-btn-login,
+#header-btn-signup {
+    visibility: hidden;
+    opacity: 0;
+}
 /* header-main-bar */
 .header-main-bar {
     display: flex;

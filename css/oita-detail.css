@@ -158,6 +158,9 @@
   border-radius: 5px;
   background-color: #fff;
 }
+.select-box .btn-area #add-to-cart {
+  margin-right: 10px;
+}
 .select-box .btn-area button:hover {
   color: #fff;
   transition: all 0.3s;
