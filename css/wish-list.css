@@ -1,3 +1,11 @@
 .wish-list {
     padding-top: 100px;
 }
+
+.wish-list #wishlist-container {
+    padding: 150px 20px;
+}
+
+.product-container a {
+    display: block;
+}

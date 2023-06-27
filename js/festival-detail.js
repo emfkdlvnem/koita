@@ -171,7 +171,6 @@ function showPopup(message, link) {
     }, 2000);
 }
 
-
 function updateWishlistButton() {
     const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     const addToWishlistButton = document.getElementById('add-to-wishlist');
@@ -182,6 +181,47 @@ function updateWishlistButton() {
     } else {
         addToWishlistButton.textContent = '찜하기';
         addToWishlistButton.classList.remove('active');
+    }
+}
+
+function updateWishlistStatus(productId) {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const wishlistButton = document.getElementById('add-to-wishlist');  
+
+    if (wishlist.includes(productId)) {
+        wishlistButton.textContent = '찜 취소하기';
+        wishlistButton.classList.add('wishlisted');
+    } else {
+        wishlistButton.textContent = '찜하기';
+        wishlistButton.classList.remove('wishlisted');
+    }
+
+	wishlistButton.addEventListener('click', () => {
+		if (wishlist.includes(productId)) {
+			const index = wishlist.indexOf(productId);
+			wishlist.splice(index, 1);
+			wishlistButton.textContent = '찜하기';
+			wishlistButton.classList.remove('wishlisted');
+			updateWishlistButton(); 
+		} else {
+			wishlist.push(productId);
+			wishlistButton.textContent = '찜 취소하기';
+			wishlistButton.classList.add('wishlisted');
+			updateWishlistButton();
+		}
+		localStorage.setItem('wishlist', JSON.stringify(wishlist)); 
+		location.reload(); // 페이지 새로고침
+	});
+}
+
+
+
+
+function addToWishlist(productId) {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    if (!wishlist.includes(productId)) {
+        wishlist.push(productId);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
     }
 }
 
@@ -196,4 +236,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	setupAddToWishlist();
     updateWishlistButton();
+	updateWishlistStatus(productId); // DOMContentLoaded 이벤트 발생 시에 찜 상태를 업데이트함
+
 });

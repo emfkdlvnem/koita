@@ -11,8 +11,8 @@ const loadHeader = () => {
             header.innerHTML = data;
             updateCartCount();
             addMenuToggle();
-            updateLoginButton();
             checkLoginStatus();
+            updateLoginButton();
         });
 }
 
