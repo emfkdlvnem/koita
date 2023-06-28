@@ -1,3 +1,6 @@
+import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { auth } from './firebaseConfig.js';
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 
@@ -210,13 +213,9 @@ function updateWishlistStatus(productId) {
 			updateWishlistButton();
 		}
 		localStorage.setItem('wishlist', JSON.stringify(wishlist)); 
-		location.reload(); // 페이지 새로고침
+		updateWishlistButton();
 	});
-	
 }
-
-
-
 
 function addToWishlist(productId) {
     const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];

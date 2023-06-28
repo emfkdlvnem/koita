@@ -3,29 +3,30 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadWishlist() {
-    // LocalStorage에서 위시리스트 로드
     const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     const wishlistContainer = document.getElementById('wishlist-container');
+    const emptyWishlistElement = document.getElementById('empty-wishlist');
 
-    // festival.json과 oita.json에서 상품 데이터를 가져옵니다.
     Promise.all([
         fetch('../data/festival.json').then(response => response.json()),
         fetch('../data/oita.json').then(response => response.json())
     ])
     .then(([festivalProducts, oitaProducts]) => {
-        // 두 상품 데이터를 병합합니다.
         const products = [...festivalProducts, ...oitaProducts];
 
-        // 위시리스트에 있는 각 상품에 대해
         wishlist.forEach(productId => {
-            // 병합된 상품 데이터에서 해당 상품 정보를 찾습니다.
             const product = products.find(p => p.id === parseInt(productId));
             if (product) {
-                // 상품 정보를 화면에 표시합니다.
                 const productElement = createProductElement(product);
                 wishlistContainer.appendChild(productElement);
             }
         });
+        if (wishlist.length === 0) {
+            const emptyWishlistText = '위시리스트가 비어있습니다.';
+            emptyWishlistElement.textContent = emptyWishlistText; 
+        } else {
+            emptyWishlistElement.textContent = ''; 
+        }
     })
     .catch(error => {
         console.error('Error:', error);
@@ -39,10 +40,14 @@ function createProductElement(product) {
     const formattedPrice = product.price.toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' });
 
     productElement.innerHTML = `
-        <h3>${product.title}</h3>
-        <img src="${product.image}" alt="${product.title}">
-        <span>${formattedPrice}</span>
-        <button>찜 취소하기</button>
+        <div class="thumb">
+            <img src="${product.image}" alt="${product.title}">
+        </div>
+        <div class="wishlist-detail">
+            <h3>${product.title}</h3>
+            <span>${formattedPrice}</span>
+            <button>찜 취소하기</button>
+        </div>
     `;
 
     const button = productElement.querySelector('button');
@@ -72,9 +77,15 @@ function removeFromWishlist(productId) {
     if (index !== -1) {
         wishlist.splice(index, 1);
         localStorage.setItem('wishlist', JSON.stringify(wishlist));
-        
+
         updateWishlistButton();
         updateWishlistStatus(productId);
+
+        if (wishlist.length === 0) {
+            const emptyWishlistElement = document.getElementById('empty-wishlist');
+            const emptyWishlistText = '위시리스트가 비어있습니다.';
+            emptyWishlistElement.textContent = emptyWishlistText; // 위시리스트가 비어있을 때 문구를 설정하여 표시
+        }
     }
 }
 
