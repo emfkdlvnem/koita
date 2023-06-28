@@ -4,3 +4,114 @@
     margin: 150px auto 0px;
     padding: 15px 24px 100px;
 }
+.section-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-title span {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+.section-title img {
+    width: 120px;
+}
+
+.login-box {
+    position: relative;
+    width: 450px;
+    height: 500px;
+    padding: 30px 50px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.login-box .social-area {
+    margin: 20px auto;
+    text-align: center;
+}
+.login-box .social-area button {
+    position: relative;
+    width: 350px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    background-color: #fff;
+}
+.login-box .social-area button::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url(../assets/image/icon/icon_google.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+.login-box p.txt {
+    position: relative;
+    text-align: center;
+    margin: 50px auto;
+}
+.login-box p.txt::before,
+.login-box p.txt::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    height: 1px;
+    background-color: #c4c4c4;
+}
+.login-box p.txt::before {
+    left: 0px;
+}
+.login-box p.txt::after {
+    right: 0px;
+}
+.login-box .login-form {
+    width: 350px;
+    margin: 20px auto 40px;
+}
+.login-box .login-form input {
+    width: 350px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.login-box .login-form input::placeholder {
+    font-size: 14px;
+}
+.login-box .login-form #btn-login {
+    width: 350px;
+    height: 50px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    background-color: #7F5539;
+    margin-bottom: 5px;
+}
+.login-box .login-form #btn-login:hover {
+    transition: all 0.3s;
+    background-color: #000;
+}
+.login-box #btn-signup {
+    position: absolute;
+    right: 52px;
+    bottom: 30px;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+.login-box #btn-signup:hover {
+    color: #fff;
+    font-weight: 700;
+    transition: all 0.3s;
+    background-color: #000;
+}

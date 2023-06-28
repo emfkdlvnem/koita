@@ -32,19 +32,24 @@
                 <span>WELCOME!</span>
                 <img src="../assets/image/logo.png" alt="logo"/>
             </h2>
-            <div class="social-area">
-                <button type="button" id="btn-social-login"><span>구글로 로그인 하기</span></button>
+            <div class="login-box">
+                <div class="social-area">
+                    <button type="button" id="btn-social-login">
+                        <span>구글 로그인</span>
+                    </button>
+                </div>
+                <p class="txt">또는</p>
+                <form class="login-form">
+                    <div>
+                        <input type="email" id="email-login" placeholder="이메일을 입력하세요" >
+                    </div>
+                    <div>
+                        <input type="password" id="password-login" placeholder="비밀번호를 입력하세요" >
+                    </div>
+                    <button type="submit" id="btn-login">로그인</button>
+                </form>
+                <a href="./signup.html" id="btn-signup" class="btn btn-signup-move"><span>회원가입</span></a>
             </div>
-            <form class="login-form">
-                <div>
-                    이메일 : <input type="email" id="email-login" placeholder="이메일" >
-                </div>
-                <div>
-                    패스워드 : <input type="password" id="password-login" placeholder="패스워드" >
-                </div>
-                <button type="submit" id="btn-login">로그인 하기</button>
-            </form>
-            <a href="./signup.html" id="btn-signup" class="btn btn-signup-move"><span>회원가입 하러 가기</span></a>
         </section>
         <!-- /login-area -->
         <!-- ------------------------------- -->

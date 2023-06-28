@@ -29,19 +29,22 @@
         <!-- signup-area -->
         <section class="signup-area">
             <h2 class="section-title">
-                <span>WELCOME!</span>
+                <span>회원가입</span>
                 <img src="../assets/image/logo.png" alt="logo"/>
             </h2>
-            <form class="signup-form">
-                <div>
-                    이메일 : <input type="email" id="email-signup" placeholder="이메일" >
-                </div>
-                <div>
-                    패스워드 : <input type="password" id="password-signup" placeholder="패스워드" >
-                </div>
-                <button type="submit" id="btn-signup">회원가입 하기</button>
-            </form>
-            <a href="./login.html" id="btn-login" class="btn btn-login-move"><span>로그인 하러가기</span></a>
+            <div class="signup-box">
+                <p class="title">가입 정보 입력</p>
+                <form class="signup-form">
+                    <div class="email">
+                        <span>이메일 주소</span><input type="email" id="email-signup" placeholder="이메일" >
+                    </div>
+                    <div class="password">
+                        <span>비밀번호</span><input type="password" id="password-signup" placeholder="패스워드" >
+                    </div>
+                    <button type="submit" id="btn-signup">회원가입 하기</button>
+                </form>
+                <a href="./login.html" id="btn-login" class="btn btn-login-move"><span>로그인</span></a>
+            </div>
         </section>
         <!-- /signup-area -->
         <!-- ------------------------------- -->

@@ -4,8 +4,93 @@
     margin: 150px auto 0px;
     padding: 15px 24px 100px;
 }
+.section-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-title span {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+.section-title img {
+    width: 120px;
+}
 
-
+.signup-box {
+    position: relative;
+    width: 450px;
+    height: 400px;
+    padding: 30px 50px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.signup-box p.title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.signup-box .signup-form {
+    width: 350px;
+    margin: 20px auto 40px;
+}
+.signup-box .signup-form .email,
+.signup-box .signup-form .password {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.signup-box .signup-form .email span,
+.signup-box .signup-form .password span  {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 50px;
+    line-height: 2.5;
+}
+.signup-box .signup-form .email input,
+.signup-box .signup-form .password input {
+    width: 265px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    background-color: #fff;
+    padding: 10px;
+}
+.signup-box input::placeholder {
+    font-size: 14px;
+}
+.signup-box .signup-form #btn-signup {
+    width: 350px;
+    height: 50px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    background-color: #7F5539;
+    margin-top: 10px;
+}
+.signup-box .signup-form #btn-signup:hover {
+    transition: all 0.3s;
+    background-color: #000;
+}
+.signup-box #btn-login {
+    position: absolute;
+    right: 52px;
+    bottom: 30px;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+.signup-box #btn-login:hover {
+    color: #fff;
+    font-weight: 700;
+    transition: all 0.3s;
+    background-color: #000;
+}
 
 /* 가입 성공 팝업창 */
 .popup-signup {
