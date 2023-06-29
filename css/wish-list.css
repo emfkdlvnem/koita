@@ -70,6 +70,10 @@
     background-color: #7F5539;
     transition: all 0.3s;
 }
+#empty-wishlist {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
 .footer {
-    top: 390px;
+    bottom: -90px;
 }

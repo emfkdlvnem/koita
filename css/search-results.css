@@ -1,0 +1,68 @@
+.search-product {
+    position: relative;
+    max-width: 1440px;
+    margin: 150px auto 50px;
+    padding: 15px 24px;
+}
+.section-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.section-title span {
+    display: block;
+    margin-right: 10px;
+    font-size: 32px;
+    line-height: 1;
+}
+.section-title img {
+    width: 32.5px;
+}
+
+
+.product-container > p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 300px;
+}
+.product-container {
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-container .product {
+    width: 300px;
+    height: 470px;
+    padding: 20px;
+    margin: 0 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.product-container .product .thumb {
+    width: 250px;
+    margin: 0 auto 10px;
+}
+.product-container .product .thumb img {
+    width: 100%;
+}
+.product-container .product .content .title {
+    margin-bottom: 5px;
+}
+
+/* 별점 */
+.stars {
+    color: #ffc107; 
+}
+
+.stars .fa-star.checked {
+    color: #ffc107; 
+}
+
+.stars .fa-star.unchecked {
+    color: #ddd; 
+}

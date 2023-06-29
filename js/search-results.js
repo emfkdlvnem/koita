@@ -51,10 +51,29 @@ function displaySearchResults(products) {
     }
 }
 
-function generateRatingHtml(rating) {
-    let starsHtml = '';
-    for (let i = 0; i < 5; i++) {
-        starsHtml += i < rating ? '<i class="fa fa-star checked"></i>' : '<i class="fa fa-star"></i>';
+function generateRatingHtml(rating, count) {
+    const starContainer = document.createElement('div');
+    starContainer.classList.add('stars');
+
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement('span');
+        star.classList.add('fa', 'fa-star');
+
+        if (i <= rating) {
+            star.classList.add('checked');
+        } else {
+            star.classList.add('unchecked');
+        }
+
+        starContainer.appendChild(star);
     }
-    return starsHtml;
+
+    const countElement = document.createElement('span');
+    countElement.textContent = `(${count} reviews)`;
+
+    const ratingElement = document.createElement('div');
+    ratingElement.appendChild(starContainer);
+    ratingElement.appendChild(countElement);
+
+    return ratingElement.outerHTML;
 }
