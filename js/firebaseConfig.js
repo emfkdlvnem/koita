@@ -12,6 +12,7 @@ export const firebaseConfig = {
 
     apiKey: "AIzaSyBfXC9gasc0NI7bFx-BYN52ULFMjU9LLho",
     authDomain: "koita-1c079.firebaseapp.com",
+    databaseURL: 'https://koita-1c079-default-rtdb.asia-southeast1.firebasedatabase.app',
     projectId: "koita-1c079",
     storageBucket: "koita-1c079.appspot.com",
     messagingSenderId: "240009170899",
