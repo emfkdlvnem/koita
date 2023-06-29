@@ -1,8 +1,8 @@
 .wish-list {
     position: relative;
     max-width: 1440px;
-    margin: 150px auto 0px;
-    padding: 15px 24px 100px;
+    margin: 150px auto;
+    padding: 15px 24px;
 }
 .wish-list .title {
     font-size: 32px;
@@ -63,4 +63,7 @@
     color: #fff;
     background-color: #7F5539;
     transition: all 0.3s;
+}
+.footer {
+    bottom: -55px;
 }

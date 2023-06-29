@@ -158,22 +158,27 @@
 .oita-tour .tour-category dt,
 .oita-festival .festival-category dt  {
     position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 100px;;
 }
 .oita-tour .tour-category dt.category01 {
-    margin-left: -65px;
+    left: 45%;
+    transform: translateX(-45%);
+
 }
 .oita-tour .tour-category dt.category02 {
-    margin-left: 65px;
+    right: 45%;
+    transform: translateX(45%);
 }
 
 .oita-festival .festival-category dt.category01 {
-    margin-left: -95px;
+    left: 43%;
+    transform: translateX(-43%);
+
 }
 .oita-festival .festival-category dt.category02 {
-    margin-left: 95px;
+    right: 43%;
+    transform: translateX(43%);
+
 }
 
 dt .btn {
@@ -203,7 +208,6 @@ dd .link-move {
 dd .link-move a {
     display: flex;
     align-items: center;
-    font-weight: 700;
 }
 dd .link-move a span {
     display: inline-block;
@@ -221,11 +225,8 @@ dd .link-move a i {
 }
 .section-content li {
     width: 280px;
-    margin-right: 100px;
+    margin: 0 50px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-.section-content li:last-child {
-    margin-right: 0;
 }
 .section-content li .thumb {
     width: 280px;

@@ -3,14 +3,15 @@
 /* footer-inn */
 .footer {
     position: relative;
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     background-color: #263238;
 }
 .footer-inn {
     max-width: 1440px;
+    height: 290px;
     margin: 0 auto;
     padding: 20px 24px;
 }

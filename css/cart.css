@@ -1,8 +1,8 @@
 .cart-inn {
     position: relative;
     max-width: 1440px;
-    margin: 150px auto 0px;
-    padding: 15px 24px 100px;
+    margin: 150px auto 105px;
+    padding: 15px 24px;
 }
 .cart-inn .title {
     font-size: 32px;
