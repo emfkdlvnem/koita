@@ -10,7 +10,6 @@
 }
 .wish-list #wishlist-container {
     position: relative;
-    margin-bottom: 300px;
 }
 .wish-list #wishlist-container::before {
     content: '';
