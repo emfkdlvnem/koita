@@ -1,16 +1,14 @@
 .wish-list {
     position: relative;
     max-width: 1440px;
-    margin: 150px auto;
+    margin: 150px auto 50px;
     padding: 15px 24px;
 }
 .wish-list .title {
     font-size: 32px;
     margin-bottom: 100px;
 }
-.wish-list #wishlist-container {
-    position: relative;
-}
+
 .wish-list #wishlist-container::before {
     content: '';
     position: absolute;
@@ -28,18 +26,23 @@
     height: 300px;
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
 
 .wish-list #wishlist-container .product .thumb {
-    width: 200px;
-    margin-right: 100px;
+    width: 300px;
+    flex: 0 0 auto;
+    margin-right: 70px;
     border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .wish-list #wishlist-container .product .thumb img {
     width: 100%;
 }
 .wish-list #wishlist-container .product .wishlist-detail {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +51,11 @@
 .wish-list #wishlist-container .product .wishlist-detail h3 {
     margin-bottom: 5px;
 }
-.wish-list #wishlist-container .product .wishlist-detail button {
+.wish-list #wishlist-container .product .btn-area {
+    flex: 0 0  auto;
+    
+}
+.wish-list #wishlist-container .product .btn-area button {
     display: block;
     width: 100px;
     height: 40px;
@@ -58,11 +65,11 @@
     border: 1px solid #000;
 }
 
-.wish-list #wishlist-container .product .wishlist-detail button:hover {
+.wish-list #wishlist-container .product .btn-area button:hover {
     color: #fff;
     background-color: #7F5539;
     transition: all 0.3s;
 }
 .footer {
-    bottom: -55px;
+    top: 390px;
 }

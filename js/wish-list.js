@@ -46,7 +46,9 @@ function createProductElement(product) {
         <div class="wishlist-detail">
             <h3>${product.title}</h3>
             <span>${formattedPrice}</span>
-            <button>찜 취소하기</button>
+        </div>
+        <div  class="btn-area">
+            <button>삭제</button>
         </div>
     `;
 

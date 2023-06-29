@@ -107,3 +107,6 @@
     background-color: #7F5539;
     transition: all 0.3s;
 }
+.footer {
+    bottom: -15px;
+}
