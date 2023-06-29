@@ -146,11 +146,9 @@
     height: 40px;
     font-size: 20px;
     line-height: 40px;
-    padding: 0 10px 0 5px;
     border: none;
     background: none;
 }
-
 /* 연관검색창 */
 .header-main-bar .search-area.active .search-suggestion {
     width: 350px;

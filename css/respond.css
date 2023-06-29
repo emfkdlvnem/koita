@@ -1,0 +1,129 @@
+@media screen and (max-width: 1104px) {
+    /* -------------------- index.html --------------------*/
+    /* 오이타 소식 tour-category */
+    /* 오이타 축제 festival-category */
+    .section-title {
+        margin-top: 20px;
+    }
+    .oita-tour .section-content,
+    .oita-festival .section-content  {
+        flex-direction: column;
+    }
+    .oita-tour .section-content li,
+    .oita-festival .section-content li {
+        width: 350px;
+        margin-bottom: 50px;
+    } 
+    .oita-tour .section-content li:first-child,
+    .oita-festival .section-content li:first-child {
+        margin-top: 20px;
+    } 
+    .oita-tour .section-content li .thumb,
+    .oita-festival .section-content li .thumb {
+        width: 350px;
+        height: 200px;
+        margin-bottom: 25px;
+    }
+    .oita-tour .tour-category dt,
+    .oita-festival .festival-category dt {
+        top: 125px;
+    }
+}
+@media screen and (max-width: 912px) {
+    /* -------------------- header.html --------------------*/
+    /* search-area */
+    .header-main-bar .search-area form {
+        width: 250px;
+    }
+    .header-main-bar .search-area .inn .search-input {
+        width: 250px;
+        font-size: 14px;
+    }
+    .header-main-bar .search-area .inn .btn-search {
+        width: 25px;
+        height: 25px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .header-main-bar .search-area .inn .btn-search i {
+        font-size: 15px;
+    }
+    /* 연관검색창 */
+    .header-main-bar .search-area.active .search-suggestion {
+        width: 250px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 836px) {
+        /* -------------------- header.html --------------------*/
+    /* cart */
+    .header-main-bar .cart a span {
+        display: none;
+    }
+    /* my-page */
+    .header-main-bar .my-page a span {
+        display: none;
+    }
+
+    /* -------------------- index.html --------------------*/
+    /* slide content */
+    .carousel .slide-area .slide .content .title {
+        color: #fff;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .carousel .slide-area .slide .content .txt {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .carousel .slide-area .slide .content .btn-more {
+        display: inline-block;
+        padding: 8px 20px;
+        margin-top: 20px;
+        color: #000;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 7px;
+        background-color: #fff;
+
+    }
+    /* 오이타 소식 tour-category */
+    /* 오이타 축제 festival-category */
+    .oita-tour .tour-category dt.category01 {
+        left: 41%;
+        transform: translateX(-41%);
+    }
+    .oita-tour .tour-category dt.category02 {
+        right: 41%;
+        transform: translateX(41%);
+    }
+    .oita-festival .festival-category dt.category01 {
+        left: 38%;
+        transform: translateX(-38%);
+    
+    }
+    .oita-festival .festival-category dt.category02 {
+        right: 38%;
+        transform: translateX(38%);
+    }
+}
+
+@media screen and (max-width: 760px) {
+    /* -------------------- index.html --------------------*/
+    /* 오이타 소식 tour-category */
+    /* 오이타 축제 festival-category */
+    .oita-tour .section-content li,
+    .oita-festival .section-content li {
+        width: 280px;
+        margin-bottom: 50px;
+    } 
+    .oita-tour .section-content li .thumb,
+    .oita-festival .section-content li .thumb {
+        width: 280;
+        height: 180px;
+        margin-bottom: 25px;
+    }
+}
