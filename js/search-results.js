@@ -1,4 +1,3 @@
-// search-results.js
 window.onload = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('q');
@@ -6,7 +5,6 @@ window.onload = () => {
     Promise.all([fetch('../data/festival.json'), fetch('../data/oita.json')])
         .then(responses => Promise.all(responses.map(response => response.json())))
         .then(([festivalProducts, oitaProducts]) => {
-            // Add 'type' property to each product
             festivalProducts.forEach(product => product.type = 'festival');
             oitaProducts.forEach(product => product.type = 'oita');
 

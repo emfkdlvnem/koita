@@ -57,10 +57,39 @@ const getCartCount = () => {
 // 검색 기능
 const setupSearchInput = () => {
     const searchInput = document.querySelector('.search-input');
+    const searchSuggestionContainer = document.querySelector('.search-suggestion');
+    const searchArea = document.querySelector('.search-area');
+    let previousQuery = '';
+
+    const updateSearchSuggestionContainer = (html) => {
+        searchSuggestionContainer.innerHTML = html;
+        if (html) {
+            searchArea.classList.add('active');
+        } else {
+            searchArea.classList.remove('active');
+        }
+    };
+
     searchInput.addEventListener('input', event => {
-        updateSearchSuggestions(event.target.value);
+        previousQuery = event.target.value;
+        if (previousQuery) {
+            updateSearchSuggestions(previousQuery).then(updateSearchSuggestionContainer);
+        } else {
+            updateSearchSuggestionContainer('');
+        }
+    });
+
+    searchInput.addEventListener('blur', () => {
+        setTimeout(() => updateSearchSuggestionContainer(''), 200);
+    });
+
+    searchInput.addEventListener('focus', () => {
+        if (previousQuery) {
+            updateSearchSuggestions(previousQuery).then(updateSearchSuggestionContainer);
+        }
     });
 };
+
 
 function getChosung(word) {
     const cho = [
@@ -85,16 +114,17 @@ function getChosung(word) {
 };
 
 const updateSearchSuggestions = (query) => {
-    Promise.all([fetch('../data/festival.json'), fetch('../data/oita.json')])
-    .then(responses => Promise.all(responses.map(response => response.json())))
-    .then(([festivalProducts, oitaProducts]) => {
-        festivalProducts.forEach(product => product.type = 'festival');
-        oitaProducts.forEach(product => product.type = 'oita');
+    return Promise.all([fetch('../data/festival.json'), fetch('../data/oita.json')])
+        .then(responses => Promise.all(responses.map(response => response.json())))
+        .then(([festivalProducts, oitaProducts]) => {
+            festivalProducts.forEach(product => product.type = 'festival');
+            oitaProducts.forEach(product => product.type = 'oita');
 
-        const allProducts = [...festivalProducts, ...oitaProducts];
+            const allProducts = [...festivalProducts, ...oitaProducts];
 
+            let suggestions = [];
             if (query) {
-                const suggestions = allProducts.filter(product => {
+                suggestions = allProducts.filter(product => {
                     const lowerCaseTitle = product.title.toLowerCase();
                     if (/^[ㄱ-ㅎ]+$/.test(query)) {
                         return getChosung(lowerCaseTitle).includes(query);
@@ -102,33 +132,22 @@ const updateSearchSuggestions = (query) => {
                         return lowerCaseTitle.includes(query.toLowerCase());
                     }
                 }).slice(0, 5);  
-
-                createSearchSuggestions(suggestions, query);
             }
+            return createSearchSuggestions(suggestions, query);
         });
 }
 
+
 const createSearchSuggestions = (suggestions, searchQuery) => {
-    const searchSuggestionContainer = document.querySelector('.search-suggestion');
-    searchSuggestionContainer.innerHTML = '';
-    
+    let searchSuggestionHtml = '';
+
     if (searchQuery) {
         for (const suggestion of suggestions) {
-            const suggestionElement = document.createElement('div');
-            suggestionElement.textContent = suggestion.title;
-            suggestionElement.classList.add('suggestion');
-
-            const productId = suggestion.id;
-
-            const detailPageUrl = suggestion.type === 'festival' ? `../pages/festival-detail.html?id=${productId}` : `../pages/oita-detail.html?id=${productId}`;
-
-            suggestionElement.addEventListener('click', () => {
-                window.location.href = detailPageUrl;
-            });
-
-            searchSuggestionContainer.appendChild(suggestionElement);
+            const detailPageUrl = suggestion.type === 'festival' ? `../pages/festival-detail.html?id=${suggestion.id}` : `../pages/oita-detail.html?id=${suggestion.id}`;
+            searchSuggestionHtml += `<div class="suggestion" onclick="window.location.href = '${detailPageUrl}'">${suggestion.title}</div>`;
         }
     }
+    return searchSuggestionHtml;
 };
 
 

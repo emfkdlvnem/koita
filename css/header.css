@@ -15,7 +15,7 @@
     max-width: 1440px;
     height: 100px;
     margin: 0 auto;
-    padding: 15px 24px;
+    padding: 10px 24px;
 }
 
 /* top-bar */
@@ -116,21 +116,26 @@
 .header-main-bar .search-area {
     flex: 1;
 }
-.header-main-bar .search-area .inn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.header-main-bar .search-area form {
     width: 350px;
+    height: 45px;
+    padding: 0 8px;
     margin: 0 auto;
     border: 2px solid #EA6E14;
     border-radius: 10px;
 }
+.header-main-bar .search-area.active form {
+    border-radius: 10px 10px 0 0 ;
+}
+.header-main-bar .search-area form .inn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .header-main-bar .search-area .inn .search-input {
-    width: 350px;
+    width: 300px;
     height: 40px;
-    margin-left: 10px;
     border: none;
-    border-radius: 10px;
     background: none;
 }
 .header-main-bar .search-area .inn .search-input:focus {
@@ -145,6 +150,21 @@
     border: none;
     background: none;
 }
+
+/* 연관검색창 */
+.header-main-bar .search-area.active .search-suggestion {
+    width: 350px;
+    padding: 10px;
+    margin-left: -10px;
+    text-align: left;
+    border: 2px solid #EA6E14;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 -2px 2px 0 rgba(227, 85, 15, 0.464);
+    background-color: #fff;
+}
+
+
 /* cart */
 .header-main-bar .cart a {
     display: flex;
