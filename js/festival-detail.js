@@ -1,41 +1,39 @@
-import { getDatabase, ref, set, onValue, remove } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 
 function loadProductDetail(productId) {
-    const db = getDatabase();
-    const productRef = ref(db, `products/${productId}`);
+	fetch('../data/festival.json')
+		.then(response => response.json())
+		.then(products => {
+		const product = products.find(p => p.id === parseInt(productId));
+		if (product) {
+			const productDetailElement = document.getElementById('product-detail');
 
-    onValue(productRef, (snapshot) => {
-        const product = snapshot.val();
-        if (product) {
-            const productDetailElement = document.getElementById('product-detail');
+			const formattedPrice = product.price.toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' });
 
-            const formattedPrice = product.price.toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' });
+			productDetailElement.innerHTML = `
+			<div class="thumb">
+				<img src="${product.image}" alt="${product.title}">
+			</div>
+			<div class="content">
+				<h4>${product.title}</h4>
+				<span>${formattedPrice}</span>
+				<div class="rating"></div> 
+			</div>
+			`;
 
-            productDetailElement.innerHTML = `
-            <div class="thumb">
-                <img src="${product.image}" alt="${product.title}">
-            </div>
-            <div class="content">
-                <h4>${product.title}</h4>
-                <span>${formattedPrice}</span>
-                <div class="rating"></div>
-            </div>
-            `;
+			const ratingElement = document.querySelector('.rating'); 
+			const rating = product.rating.rate;
+			const count = product.rating.count; 
 
-            const ratingElement = document.querySelector('.rating');
-            const rating = product.rating.rate;
-            const count = product.rating.count;
-
-            showRating(ratingElement, rating, count);
-        }
-    });
+			showRating(ratingElement, rating, count); 
+		}
+		});
 }
 
 function setupAddToCart() {
-    const addToCartButton = document.getElementById('add-to-cart');
+	const addToCartButton = document.getElementById('add-to-cart');
     const decreaseQuantityButton = document.getElementById('decrease-quantity');
     const increaseQuantityButton = document.getElementById('increase-quantity');
     const quantityInput = document.getElementById('select-num');
@@ -61,68 +59,59 @@ function setupAddToCart() {
         updateTotalQuantity();
     });
 
-    addToCartButton.addEventListener('click', () => {
-        const quantity = parseInt(quantityInput.value);
+	addToCartButton.addEventListener('click', () => {
+		const quantity = parseInt(quantityInput.value);
+	// 	const quantity = parseInt(selectNum.value);
 
-        const db = getDatabase();
-        const cartRef = ref(db, `carts/${userId}/${productId}`);
+		let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+		if (cartItems.find(item => item.productId === productId)) {
+			cartItems = cartItems.map(item => {
+				if (item.productId === productId) {
+					item.quantity += quantity;
+				}
+				return item;
+			});
+		} else {
+			const item = { productId: productId, productType: 'festival', quantity: quantity };
+			cartItems.push(item);
+		}
+		localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-        onValue(cartRef, (snapshot) => {
-            const cartItem = snapshot.val();
+		console.log(`${quantity}개 상품이 장바구니에 추가되었습니다.`);
 
-            if (cartItem) {
-                const updatedQuantity = cartItem.quantity + quantity;
-                set(ref(db, `carts/${userId}/${productId}`), { ...cartItem, quantity: updatedQuantity })
-                    .then(() => {
-                        console.log(`${quantity}개 상품이 장바구니에 추가되었습니다.`);
-                        window.updateCartCount();
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
-            } else {
-                set(ref(db, `carts/${userId}/${productId}`), { productId, quantity })
-                    .then(() => {
-                        console.log(`${quantity}개 상품이 장바구니에 추가되었습니다.`);
-                        window.updateCartCount();
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
-            }
-        });
-    });
+		updateCartCount();
+	});
 
-    function updateTotalQuantity() {
-        const quantity = parseInt(quantityInput.value);
-        totalQuantityElement.textContent = `총 수량: ${quantity}`;
-    }
+	function updateTotalQuantity() {
+		const quantity = parseInt(quantityInput.value);
+		totalQuantityElement.textContent = `총 수량: ${quantity}`;
+	}	
 }
 
 function showRating(ratingElement, rating, count) {
-    ratingElement.innerHTML = '';
+	ratingElement.innerHTML = ''; 
 
-    const starContainer = document.createElement('div');
-    starContainer.classList.add('stars');
+	const starContainer = document.createElement('div');
+	starContainer.classList.add('stars');
 
-    for (let i = 1; i <= 5; i++) {
-        const star = document.createElement('span');
-        star.classList.add('fa', 'fa-star');
+	for (let i = 1; i <= 5; i++) {
+		const star = document.createElement('span');
+		star.classList.add('fa', 'fa-star'); 
 
-        if (i <= rating) {
-            star.classList.add('checked');
-        } else {
-            star.classList.add('unchecked');
-        }
+		if (i <= rating) {
+			star.classList.add('checked');
+		} else {
+			star.classList.add('unchecked'); 
+		}
 
-        starContainer.appendChild(star);
-    }
+		starContainer.appendChild(star);
+	}
 
-    ratingElement.appendChild(starContainer);
+	ratingElement.appendChild(starContainer);
 
-    const countElement = document.createElement('span');
-    countElement.textContent = `(${count} reviews)`;
-    ratingElement.appendChild(countElement);
+	const countElement = document.createElement('span');
+	countElement.textContent = `(${count} reviews)`; 
+	ratingElement.appendChild(countElement);
 }
 
 function setupQuantityInput() {
@@ -138,34 +127,27 @@ function setupQuantityInput() {
     });
 }
 
+
+//위시리스트 관련 로직 부분
 function setupAddToWishlist() {
     const addToWishlistButton = document.getElementById('add-to-wishlist');
     addToWishlistButton.addEventListener('click', toggleWishlist);
 }
 
 function toggleWishlist() {
-    const db = getDatabase();
-    const wishlistRef = ref(db, `wishlist/${userId}/${productId}`);
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
-    onValue(wishlistRef, (snapshot) => {
-        if (snapshot.exists()) {
-            remove(ref(db, `wishlist/${userId}/${productId}`))
-                .then(() => {
-                    showPopup('찜을 취소하였습니다');
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        } else {
-            set(wishlistRef, true)
-                .then(() => {
-                    showPopup('찜하였습니다', 'wish-list.html');
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }
-    });
+    if (wishlist.includes(productId)) {
+        const index = wishlist.indexOf(productId);
+        wishlist.splice(index, 1);
+        showPopup('찜을 취소하였습니다');
+    } else {
+        wishlist.push(productId);
+        showPopup('찜하였습니다', 'wish-list.html');
+    }
+
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    updateWishlistButton();
 }
 
 let popupTimeoutId = null;
@@ -191,71 +173,66 @@ function showPopup(message, link) {
 }
 
 function updateWishlistButton() {
-    const db = getDatabase();
-    const wishlistRef = ref(db, `wishlist/${userId}/${productId}`);
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     const addToWishlistButton = document.getElementById('add-to-wishlist');
 
-    onValue(wishlistRef, (snapshot) => {
-        if (snapshot.exists()) {
-            addToWishlistButton.textContent = '찜취소하기';
-            addToWishlistButton.classList.add('active');
-        } else {
-            addToWishlistButton.textContent = '찜하기';
-            addToWishlistButton.classList.remove('active');
-        }
-    });
+    if (wishlist.includes(productId)) {
+        addToWishlistButton.textContent = '찜취소하기';
+        addToWishlistButton.classList.add('active');
+    } else {
+        addToWishlistButton.textContent = '찜하기';
+        addToWishlistButton.classList.remove('active');
+    }
 }
 
 function updateWishlistStatus(productId) {
-    const db = getDatabase();
-    const wishlistRef = ref(db, `wishlist/${userId}/${productId}`);
-    const wishlistButton = document.getElementById('add-to-wishlist');
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const wishlistButton = document.getElementById('add-to-wishlist');  
 
-    onValue(wishlistRef, (snapshot) => {
-        if (snapshot.exists()) {
-            wishlistButton.textContent = '찜 취소하기';
-            wishlistButton.classList.add('wishlisted');
-        } else {
-            wishlistButton.textContent = '찜하기';
-            wishlistButton.classList.remove('wishlisted');
-        }
-    });
+    if (wishlist.includes(productId)) {
+        wishlistButton.textContent = '찜 취소하기';
+        wishlistButton.classList.add('wishlisted');
+    } else {
+        wishlistButton.textContent = '찜하기';
+        wishlistButton.classList.remove('wishlisted');
+    }
 
-    wishlistButton.addEventListener('click', () => {
-        onValue(wishlistRef, (snapshot) => {
-            if (snapshot.exists()) {
-                remove(ref(db, `wishlist/${userId}/${productId}`))
-                    .then(() => {
-                        wishlistButton.textContent = '찜하기';
-                        wishlistButton.classList.remove('wishlisted');
-                        updateWishlistButton();
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
-            } else {
-                set(wishlistRef, true)
-                    .then(() => {
-                        wishlistButton.textContent = '찜 취소하기';
-                        wishlistButton.classList.add('wishlisted');
-                        updateWishlistButton();
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
-            }
-        });
-    });
+	wishlistButton.addEventListener('click', () => {
+		if (wishlist.includes(productId)) {
+			const index = wishlist.indexOf(productId);
+			wishlist.splice(index, 1);
+			wishlistButton.textContent = '찜하기';
+			wishlistButton.classList.remove('wishlisted');
+			updateWishlistButton(); 
+		} else {
+			wishlist.push(productId);
+			wishlistButton.textContent = '찜 취소하기';
+			wishlistButton.classList.add('wishlisted');
+			updateWishlistButton();
+		}
+		localStorage.setItem('wishlist', JSON.stringify(wishlist)); 
+		updateWishlistButton();
+	});
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
+function addToWishlist(productId) {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    if (!wishlist.includes(productId)) {
+        wishlist.push(productId);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    }
+}
 
-    loadProductDetail(productId);
-    setupAddToCart();
-    setupQuantityInput();
-    setupAddToWishlist();
+
+window.addEventListener('DOMContentLoaded', () => {
+	const urlParams = new URLSearchParams(window.location.search);
+	const productId = urlParams.get('id');
+
+	loadProductDetail(productId);
+	setupAddToCart();
+	setupQuantityInput();
+
+	setupAddToWishlist();
     updateWishlistButton();
-    updateWishlistStatus(productId);
+	updateWishlistStatus(productId); 
 });

@@ -6,6 +6,15 @@ import { auth, app } from './firebaseConfig.js';
     const analytics = getAnalytics(app);
     const provider = new GoogleAuthProvider();
     
+    let isLoggedIn = false;
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            isLoggedIn = true;
+        } else {
+            isLoggedIn = false;
+        }
+    });
 
 
     onAuthStateChanged(auth, (user) => {

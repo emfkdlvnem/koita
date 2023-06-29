@@ -17,16 +17,11 @@ const loadHeader = () => {
 }
 
 const checkLoginStatus = () => {
-    const wishlistButton = document.querySelector('.my-page .btn-wish-list');
-    
-    auth.onAuthStateChanged((user) => {
-        if (user) {
-            wishlistButton.href = 'wish-list.html';
-        } else {
-            wishlistButton.addEventListener('click', (event) => {
-                event.preventDefault();
-                alert('로그인을 해주세요.');
-            });
+    document.querySelector('.my-page .btn-wish-list').addEventListener('click', (event) => {
+        const user = auth.currentUser;
+        if (!user) {
+            event.preventDefault();
+            alert('로그인을 해주세요.');
         }
     });
 }
@@ -46,8 +41,8 @@ const addMenuToggle = () => {
     });
 }
 
-const updateCartCount = async () => {
-    const cartCount = await getCartCount();
+const updateCartCount = () => {
+    const cartCount = getCartCount();
     const cartCountElement = document.querySelector('#cart-count');
     cartCountElement.textContent = cartCount;
 }
