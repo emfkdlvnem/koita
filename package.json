@@ -1,7 +1,7 @@
 {
   "name": "koita",
   "version": "1.0.0",
-  "description": "<<<<<<< HEAD # koita ======= # koita # koita >>>>>>> eb7af40 (first commit) # koita # koita",
+  "description": "koita",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,8 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "hangul-js": "^0.2.6"
   }
 }

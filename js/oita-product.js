@@ -8,7 +8,7 @@ function loadProducts(jsonFile) {
                 const formattedPrice = product.price.toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' });
                 const rating = product.rating.rate; // 별점
                 const count = product.rating.count; // 리뷰 수
-                const ratingHtml = generateRatingHtml(rating, count); // 별점 아이콘을 생성하는 함수 호출
+                const ratingHtml = generateRatingHtml(rating, count); 
 
                 return `
                     <div class="product">

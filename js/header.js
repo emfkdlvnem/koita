@@ -13,6 +13,7 @@ const loadHeader = () => {
             addMenuToggle();
             checkLoginStatus();
             updateLoginButton();
+            setupSearchInput();
         });
 }
 
@@ -52,6 +53,85 @@ const getCartCount = () => {
     const totalQuantity = Object.values(cartItems).reduce((sum, item) => sum + item.quantity, 0);
     return totalQuantity;
 };
+
+// 검색 기능
+const setupSearchInput = () => {
+    const searchInput = document.querySelector('.search-input');
+    searchInput.addEventListener('input', event => {
+        updateSearchSuggestions(event.target.value);
+    });
+};
+
+function getChosung(word) {
+    const cho = [
+        'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 
+        'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'
+    ];
+    
+    let chosung = '';
+    for (let i = 0; i < word.length; i++) {
+        const charCode = word.charCodeAt(i);
+        if (charCode < 0xAC00 || charCode > 0xD7A3) {
+            chosung += word[i];
+            continue;
+        }
+        const x = charCode - 0xAC00;
+        const y = x % (21 * 28);
+        const z = y % 28;
+        const first = parseInt(x / (21 * 28));
+        chosung += cho[first];
+    }
+    return chosung;
+};
+
+const updateSearchSuggestions = (query) => {
+    Promise.all([fetch('../data/festival.json'), fetch('../data/oita.json')])
+    .then(responses => Promise.all(responses.map(response => response.json())))
+    .then(([festivalProducts, oitaProducts]) => {
+        festivalProducts.forEach(product => product.type = 'festival');
+        oitaProducts.forEach(product => product.type = 'oita');
+
+        const allProducts = [...festivalProducts, ...oitaProducts];
+
+            if (query) {
+                const suggestions = allProducts.filter(product => {
+                    const lowerCaseTitle = product.title.toLowerCase();
+                    if (/^[ㄱ-ㅎ]+$/.test(query)) {
+                        return getChosung(lowerCaseTitle).includes(query);
+                    } else {
+                        return lowerCaseTitle.includes(query.toLowerCase());
+                    }
+                }).slice(0, 5);  
+
+                createSearchSuggestions(suggestions, query);
+            }
+        });
+}
+
+const createSearchSuggestions = (suggestions, searchQuery) => {
+    const searchSuggestionContainer = document.querySelector('.search-suggestion');
+    searchSuggestionContainer.innerHTML = '';
+    
+    if (searchQuery) {
+        for (const suggestion of suggestions) {
+            const suggestionElement = document.createElement('div');
+            suggestionElement.textContent = suggestion.title;
+            suggestionElement.classList.add('suggestion');
+
+            const productId = suggestion.id;
+
+            const detailPageUrl = suggestion.type === 'festival' ? `../pages/festival-detail.html?id=${productId}` : `../pages/oita-detail.html?id=${productId}`;
+
+            suggestionElement.addEventListener('click', () => {
+                window.location.href = detailPageUrl;
+            });
+
+            searchSuggestionContainer.appendChild(suggestionElement);
+        }
+    }
+};
+
+
 
 window.updateCartCount = updateCartCount;
 
