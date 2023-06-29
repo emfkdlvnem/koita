@@ -8,8 +8,8 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-bottom: 50px;
 }
-
 .festival-product .section-title span {
     display: block;
     margin-right: 10px;
@@ -19,6 +19,22 @@
 .festival-product .section-title img {
     width: 32.5px;
 }
+
+/* 상품 필터링 */
+.product-filter  {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: right;
+}
+.product-filter select {
+    width: 150px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 3px;
+}
+
+/* 상품 리스트 */
 #product-list {
     width: 1000px;
     display: flex;

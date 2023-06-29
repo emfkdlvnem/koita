@@ -2,6 +2,7 @@ function loadProducts(jsonFile) {
     fetch(jsonFile)
         .then(response => response.json())
         .then(products => {
+            applyFilter(products);
             let productList = document.getElementById('product-list');
             productList.innerHTML = products.map(product => {
                 const formattedPrice = product.price.toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' });
@@ -27,9 +28,36 @@ function loadProducts(jsonFile) {
             }).join('');
         });
 }
+function applyFilter(products) {
+    const filter = document.getElementById('filter').value;
+    let sortedProducts;
+
+    switch(filter) {
+        case 'highest':
+            sortedProducts = products.sort((a, b) => b.price - a.price);
+            break;
+        case 'lowest':
+            sortedProducts = products.sort((a, b) => a.price - b.price);
+            break;
+        case 'top_rated':
+            sortedProducts = products.sort((a, b) => b.rating.count - a.rating.count);
+            break;
+        default:
+            sortedProducts = products;
+    }
+
+    displayProducts(sortedProducts);
+}
+
+function displayProducts(products) {
+    let productList = document.getElementById('product-list');
+    productList.innerHTML = products.map(product => {
+    }).join('');
+}
 
 window.onload = () => {
     loadProducts('../data/festival.json');
+    document.getElementById('filter').addEventListener('change', () => loadProducts('../data/festival.json'));
 };
 
 // 별점 아이콘을 생성하는 함수
