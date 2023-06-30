@@ -29,6 +29,7 @@
         top: 125px;
     }
 }
+
 @media screen and (max-width: 912px) {
     /* -------------------- header.html --------------------*/
     /* search-area */
@@ -53,10 +54,8 @@
         width: 250px;
         font-size: 14px;
     }
-}
 
-@media screen and (max-width: 836px) {
-        /* -------------------- header.html --------------------*/
+     /* -------------------- header.html --------------------*/
     /* cart */
     .header-main-bar .cart a span {
         display: none;
@@ -65,31 +64,33 @@
     .header-main-bar .my-page a span {
         display: none;
     }
+}
 
+@media screen and (max-width: 836px) {
     /* -------------------- index.html --------------------*/
     /* slide content */
     .carousel .slide-area .slide .content .title {
-        color: #fff;
-        font-size: 14px;
-        margin-bottom: 5px;
+        font-size: 16px;
     }
     .carousel .slide-area .slide .content .txt {
-        color: #fff;
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 1.2;
+        font-size: 28px;
     }
     .carousel .slide-area .slide .content .btn-more {
-        display: inline-block;
-        padding: 8px 20px;
-        margin-top: 20px;
-        color: #000;
-        font-size: 18px;
-        font-weight: 700;
-        border-radius: 7px;
-        background-color: #fff;
-
+        padding: 5px 15px;
+        font-size: 15px;
     }
+
+    /* indicator */
+    .carousel .indicator-area .indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    /* btn-area */
+    .carousel .btn-area .btn {
+        font-size: 30px;
+    }
+
     /* 오이타 소식 tour-category */
     /* 오이타 축제 festival-category */
     .oita-tour .tour-category dt.category01 {
@@ -109,6 +110,39 @@
         right: 38%;
         transform: translateX(38%);
     }
+
+    /* 오이타 쇼핑 oita-shopping */
+    .oita-shopping .shopping-content .title {
+        font-size: 16px;
+    }
+    .oita-shopping .shopping-content .txt {
+        color: #fff;
+        font-size: 28px;
+    }
+    .oita-shopping .shopping-content .btn-more {
+        padding: 5px 15px;
+        font-size: 15px;
+    }
+
+    /* -------------------- contact.html --------------------*/
+    .contact .contact-list .contact-item {
+        width: 500px;
+        padding: 15px;
+    }
+    .contact .contact-list .contact-item .content::before {
+        width: 460px;
+        top: 40px;
+    }
+    .contact .contact-list .contact-item .content .title {
+        font-size: 16px;
+    }
+    .contact .contact-list .contact-item .content .btn i {
+        font-size: 22px;
+    }
+    .contact .contact-list .contact-item .txt.active {
+        margin-top: 10px;
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 760px) {
@@ -125,5 +159,94 @@
         width: 280;
         height: 180px;
         margin-bottom: 25px;
+    }
+    .section-title span {
+        font-size: 28px;
+    }
+    .section-title img {
+        width: 28px;
+    }
+        /* 오이타 소식 tour-category */
+    /* 오이타 축제 festival-category */
+    .oita-tour .tour-category dt.category01 {
+        left: 38%;
+        transform: translateX(-38%);
+    }
+    .oita-tour .tour-category dt.category02 {
+        right: 38%;
+        transform: translateX(38%);
+    }
+    .oita-festival .festival-category dt.category01 {
+        left: 35%;
+        transform: translateX(-35%);
+    }
+    .oita-festival .festival-category dt.category02 {
+        right: 35%;
+        transform: translateX(35%);
+    }
+}
+
+
+@media screen and (max-width: 630px) {
+    /* -------------------- header.html --------------------*/
+    /* top-bar */
+    .login-section a {
+        font-size: 14px;
+    }
+
+    /* header-main-bar */
+    .header-main-bar .logo img {
+        width: 100px;
+        height: 40px;
+    }
+
+    /* btn-menu */
+    .header-main-bar .nav .btn-menu {
+        width: 30px;
+        height: 30px;
+        font-size: 22px;
+        margin-left: 10px;
+    }
+
+    /* cart */
+    .header-main-bar .cart a {
+        margin-right: 10px;
+    }
+    .header-main-bar .cart a i {
+        font-size: 16px;
+    }
+
+    /* my-page */
+    .header-main-bar .my-page a {
+        margin-left: 0px;
+    }
+    .header-main-bar .my-page a i {
+        font-size: 16px;
+    }
+
+    /* search-area */
+    .header-main-bar .search-area form {
+        width: 180px;
+        height: 35px;
+    }
+    .header-main-bar .search-area .inn .search-input {
+        width: 180px;
+        height: 30px;
+        font-size: 12px;
+    }
+    .header-main-bar .search-area .inn .btn-search {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+        line-height: 14px;
+    }
+    .header-main-bar .search-area .inn .btn-search i {
+        font-size: 15px;
+    }
+
+    /* 연관검색창 */
+    .header-main-bar .search-area.active .search-suggestion {
+        width: 180px;
+        font-size: 12px;
     }
 }

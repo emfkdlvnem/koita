@@ -51,7 +51,7 @@
     justify-content: space-between;
     text-align: center;
 }
-.header-main-bar .logo .img {
+.header-main-bar .logo img {
     width: 121px;
     height: 48px;
 }
@@ -160,6 +160,15 @@
     border-radius: 0 0 10px 10px;
     box-shadow: 0 -2px 2px 0 rgba(227, 85, 15, 0.464);
     background-color: #fff;
+}
+.header-main-bar .search-area.active .search-suggestion .suggestion {
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.header-main-bar .search-area.active .search-suggestion .suggestion:hover {
+    transition: all 0.3s;
+    background-color: aqua;
 }
 
 
