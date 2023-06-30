@@ -3,20 +3,20 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 import { doc, setDoc, arrayUnion, arrayRemove, getDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
-// export const firebaseConfig = {
-//     apiKey: "AIzaSyBfXC9gasc0NI7bFx-BYN52ULFMjU9LLho",
-//     authDomain: "koita-1c079.firebaseapp.com",
-//     databaseURL: 'https://koita-1c079-default-rtdb.asia-southeast1.firebasedatabase.app',
-//     projectId: "koita-1c079",
-//     storageBucket: "koita-1c079.appspot.com",
-//     messagingSenderId: "240009170899",
-//     appId: "1:240009170899:web:a7184866ddf02275e56926",
-//     measurementId: "G-NHQ6QB7LNY"
-// };
+export const firebaseConfig = {
+    apiKey: "AIzaSyBfXC9gasc0NI7bFx-BYN52ULFMjU9LLho",
+    authDomain: "koita-1c079.firebaseapp.com",
+    databaseURL: 'https://koita-1c079-default-rtdb.asia-southeast1.firebasedatabase.app',
+    projectId: "koita-1c079",
+    storageBucket: "koita-1c079.appspot.com",
+    messagingSenderId: "240009170899",
+    appId: "1:240009170899:web:a7184866ddf02275e56926",
+    measurementId: "G-NHQ6QB7LNY"
+};
 
-// export const app = initializeApp(firebaseConfig);
-// export const auth = getAuth();
-// export const db = getFirestore(app);
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth();
+export const db = getFirestore(app);
 
 
 // // 장바구니에 아이템 추가
