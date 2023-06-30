@@ -20,14 +20,9 @@
     margin-top: 50px;
 }
 .youtube .content-list .video-item {
-    width: 48%;
+    width: 500px;
     margin: 0 auto 50px;
     text-align: center;
-}
-.youtube .content-list .video-item a {
-    display: block;
-    width: 500px;
-    margin: 0 auto;
 }
 .youtube .content-list .video-item .title {
     font-size: 20px;
@@ -37,6 +32,8 @@
     position: relative;
     width: 500px;
     height: 280px;
+    margin: 0 auto;
+    text-align: center;
 }
 .youtube .content-list .video-item .thumb img{
     width: 100%;

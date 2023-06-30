@@ -1,6 +1,6 @@
 // 날씨 api
 function getWeatherData() {
-    // const apiKey = '80b62e0ba0594a2abdf181533232106';
+    const apiKey = '80b62e0ba0594a2abdf181533232106';
     const koreaUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Seoul,Korea&lang=kr`;
     const japanUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Oita,Japan&lang=kr`;
 
@@ -26,8 +26,8 @@ function getWeatherData() {
 
 // youtube api
 function getYouTubeData() {
-    // const youtubeApiKey = 'AIzaSyDoSnXhlTJyL0bXj3p52a1q7HsOkGS2Y4s';
-    // const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeApiKey}&part=snippet&q=Oita&maxResults=10`;
+    const youtubeApiKey = 'AIzaSyDoSnXhlTJyL0bXj3p52a1q7HsOkGS2Y4s';
+    const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?key=${youtubeApiKey}&part=snippet&q=Oita&maxResults=10`;
 
     // 유튜브 API 호출
     const youtubeDataPromise = axios.get(youtubeUrl)

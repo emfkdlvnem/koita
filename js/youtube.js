@@ -1,7 +1,6 @@
 // import axios from 'axios';
 
 // 유튜브 API 
-// const youtubeApiKey = 'AIzaSyCokCMiB2t_sqo7NMZfSY';
 
 function createVideoList(videos) {
     const contentList = document.querySelector('.content-list');

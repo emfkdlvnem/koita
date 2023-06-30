@@ -1,3 +1,21 @@
+@media screen and (max-width: 1166px) {
+    /* -------------------- youtube.html --------------------*/
+    /* 유튜브 api */
+    .youtube .content-list .video-item {
+        width: 450px;
+    }
+    .youtube .content-list .video-item .title {
+        font-size: 18px;
+    }
+    .youtube .content-list .video-item .thumb {
+        width: 450px;
+        height: 240px;
+    }
+    .youtube .content-list .video-item .thumb::before {
+        width: 80px;
+        height: 80px;
+    }
+}
 @media screen and (max-width: 1104px) {
     /* -------------------- index.html --------------------*/
     /* 오이타 소식 tour-category */
@@ -29,6 +47,68 @@
         top: 125px;
     }
 }
+@media screen and (max-width: 1042px) {
+    /* -------------------- youtube.html --------------------*/
+    /* 유튜브 api */
+    .youtube .content-list .video-item {
+        width: 400px;
+    }
+    .youtube .content-list .video-item .title {
+        font-size: 18px;
+    }
+    .youtube .content-list .video-item .thumb {
+        width: 400px;
+        height: 220px;
+    }
+    .youtube .content-list .video-item .thumb::before {
+        width: 70px;
+        height: 70px;
+    }
+}
+@media screen and (max-width: 940px) {
+    /* -------------------- cart.html --------------------*/
+    .cart-inn {
+        margin-bottom: 0;
+    }
+    .cart-inn .title {
+        font-size: 28px;
+    }
+    #cart-items .txt-none {
+        font-size: 16px;
+    }
+    #cart-items .cart-item {
+        width: 400px;
+        height: 120px;
+    }
+    #cart-items .cart-item .thumb {
+        width: 120px;
+    }
+
+    /* cart product list */
+    .item-details span  {
+        font-size: 15px;
+    }
+    .item-details button {
+        width: 70px;
+        height: 30px;
+        font-size: 14px;
+    }
+    /* total */
+    .cart-summary {
+        width: 280px;
+        height: 250px;
+    }
+    .cart-summary .summary-title {
+        font-size: 18px;
+    }
+    .cart-summary .summary-value {
+        font-size: 16px;
+    }
+    .cart-summary button {
+        font-size: 14px;
+        margin-top: 40px;
+    }
+}
 
 @media screen and (max-width: 912px) {
     /* -------------------- header.html --------------------*/
@@ -55,7 +135,7 @@
         font-size: 14px;
     }
 
-     /* -------------------- header.html --------------------*/
+    /* -------------------- header.html --------------------*/
     /* cart */
     .header-main-bar .cart a span {
         display: none;
@@ -63,6 +143,23 @@
     /* my-page */
     .header-main-bar .my-page a span {
         display: none;
+    }
+    
+    /* -------------------- youtube.html --------------------*/
+    /* 유튜브 api */
+    .youtube .content-list .video-item {
+        width: 350px;
+    }
+    .youtube .content-list .video-item .title {
+        font-size: 18px;
+    }
+    .youtube .content-list .video-item .thumb {
+        width: 350px;
+        height: 190px;
+    }
+    .youtube .content-list .video-item .thumb::before {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -91,6 +188,23 @@
         font-size: 30px;
     }
 
+    .section-title span {
+        font-size: 28px;
+    }
+    .oita-tour .section-title img,
+    .oita-festival .section-title img,
+    .oita-shopping .section-title img 
+    .contact .section-title img {
+        width: 28px;
+    }
+    .weather .section-title img,
+    .youtube .section-title img {
+        width: 54px;
+    }
+    .youtube .section-title img {
+
+    }
+
     /* 오이타 소식 tour-category */
     /* 오이타 축제 festival-category */
     .oita-tour .tour-category dt.category01 {
@@ -116,7 +230,6 @@
         font-size: 16px;
     }
     .oita-shopping .shopping-content .txt {
-        color: #fff;
         font-size: 28px;
     }
     .oita-shopping .shopping-content .btn-more {
@@ -143,6 +256,30 @@
         margin-top: 10px;
         font-size: 14px;
     }
+
+    /* -------------------- weather.html --------------------*/
+    .weather .weather-content > .content {
+        width: 280px;
+        height: 180px;
+    }
+    .weather .weather-content > .content .section-title {
+        font-size: 16px;
+        margin: 20px auto  0;
+    }
+    .weather .weather-content > .content .section-title span {
+        margin-left: 70px;
+        font-size: 24px;
+    }
+    .weather .weather-content > .content .section-title::before {
+        width: 280px;
+    }
+    .weather .weather-content > .content .content-area {
+        margin-top: 40px;
+    }
+    .weather .weather-content > .content .content-area .main-content .txt02 {margin-left: 10px;}
+    .weather .weather-content > .content .content-area .sub-content  {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 760px) {
@@ -160,13 +297,8 @@
         height: 180px;
         margin-bottom: 25px;
     }
-    .section-title span {
-        font-size: 28px;
-    }
-    .section-title img {
-        width: 28px;
-    }
-        /* 오이타 소식 tour-category */
+
+    /* 오이타 소식 tour-category */
     /* 오이타 축제 festival-category */
     .oita-tour .tour-category dt.category01 {
         left: 38%;
@@ -184,9 +316,79 @@
         right: 35%;
         transform: translateX(35%);
     }
+    /* -------------------- cart.html --------------------*/
+    #cart-items .cart-item .thumb {
+        margin-right: 50px;
+    }
+
+    /* total */
+
 }
 
+@media screen and (max-width: 760px) {
+    /* -------------------- index.html --------------------*/
+    /* scroll-top-btn */
+    #scroll-top-btn {
+        width: 45px;
+        height: 45px;
+    }
 
+    /* -------------------- weather.html --------------------*/
+    .weather .weather-content {
+        flex-direction: column;
+    }
+    .weather .weather-content > .content.korea-weather-content {
+        margin-bottom: 30px;
+    }
+
+    /* -------------------- footer.html --------------------*/
+    .footer-inn {
+        height: auto;
+    }
+    .footer-main-bar {
+        flex-direction: column;
+    }
+    .footer-left {
+        order: 2;
+        margin-bottom: 30px;
+    }
+    .footer-right {
+        order: 1;
+    }
+    .footer-right .sns {
+        margin: 30px auto;
+    }
+    .footer-right .sns a img {
+        width: 25px;
+    }
+}
+@media screen and (max-width: 696px) {
+    /* -------------------- cart.html --------------------*/
+    /* cart product list */
+    .item-details span  {
+        font-size: 15px;
+    }
+    .item-details button {
+        width: 70px;
+        height: 30px;
+        font-size: 14px;
+    }
+    /* total */
+    .cart-summary {
+        width: 250px;
+        height: 200px;
+    }
+    .cart-summary .summary-title {
+        font-size: 16px;
+    }
+    .cart-summary .summary-value {
+        font-size: 14px;
+    }
+    .cart-summary button {
+        font-size: 14px;
+        margin-top: 0px;
+    }
+}
 @media screen and (max-width: 630px) {
     /* -------------------- header.html --------------------*/
     /* top-bar */
@@ -206,6 +408,19 @@
         height: 30px;
         font-size: 22px;
         margin-left: 10px;
+    }
+
+    /* btn-menu > open */
+    .header-main-bar .nav .menu {
+        left: 140px;
+        width: 250px;
+        padding: 30px;
+    }
+    .header-main-bar .nav .menu >li .menu-title {
+        font-size: 14px;
+    }
+    .header-main-bar .nav .menu >li ul li a {
+        font-size: 14px;
     }
 
     /* cart */
@@ -248,5 +463,72 @@
     .header-main-bar .search-area.active .search-suggestion {
         width: 180px;
         font-size: 12px;
+    }
+
+    /* -------------------- index.html --------------------*/
+    /* slide content */
+    .carousel .slide-area .slide .content {
+        left: 70px;
+    }
+    .carousel .slide-area .slide .content .title {
+        font-size: 14px;
+    }
+    .carousel .slide-area .slide .content .txt {
+        font-size: 24px;
+    }
+    .carousel .slide-area .slide .content .btn-more {
+        padding: 3px 10px;
+        font-size: 14px;
+    }
+
+    /* 오이타 쇼핑 oita-shopping */
+    .oita-shopping .shopping-content .title {
+        font-size: 14px;
+    }
+    .oita-shopping .shopping-content .txt {
+        font-size: 24px;
+    }
+    .oita-shopping .shopping-content .btn-more {
+        padding: 3px 10px;
+        font-size: 14px;
+    }
+
+    /* -------------------- cart.html --------------------*/
+    #cart-items .txt-none {margin-bottom: 50px;}
+    #cart-items  {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 100px !important;
+    }
+    #cart-items .cart-item {
+        order: 2;
+    }
+
+    /* cart product list */
+    .item-details span  {
+        font-size: 14px;
+    }
+    .item-details button {
+        width: 70px;
+        height: 30px;
+        font-size: 14px;
+    }
+    /* total */
+    .cart-summary {
+        position: relative;
+        left: 0;
+        width: 400px;
+        height: 110px;
+        padding: 20px;
+        margin-left: 0;
+        margin-bottom: 50px;
+        order: 1;
+    }
+    .cart-summary button {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 8px 15px;
     }
 }
