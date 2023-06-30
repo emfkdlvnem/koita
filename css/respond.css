@@ -15,6 +15,21 @@
         width: 80px;
         height: 80px;
     }
+
+    /* -------------------- speciality.html --------------------*/
+    /* -------------------- tourist.html --------------------*/
+    .section-content li {
+        width: 750px;
+        height: 245px;
+        margin-bottom: 70px;
+    }
+    .section-content li .thumb {
+        width: 380px;
+        height: 245px;
+    }
+    .section-content li .content {
+        width: 300px;
+    }
 }
 @media screen and (max-width: 1104px) {
     /* -------------------- index.html --------------------*/
@@ -408,6 +423,41 @@
     }
     .wish-list #wishlist-container .product .thumb {
         width: 180px;
+    }
+
+    /* -------------------- speciality.html --------------------*/
+    /* -------------------- tourist.html --------------------*/
+    /* -------------------- oita-maturi.html --------------------*/
+    .speciality .section-content li,
+    .tourist .section-content li,
+    .oita-maturi .section-content li {
+        flex-direction: column;
+        width: 300px;
+        height: auto;
+        margin: 0 auto 50px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #fff;
+    }
+    .speciality .section-content li:nth-child(2),
+    .tourist .section-content li:nth-child(2),
+    .oita-maturi .section-content li:nth-child(2),
+    .oita-maturi .section-content li:nth-child(4) {
+        flex-direction: column;
+    }
+    .speciality .section-content li .thumb,
+    .tourist .section-content li .thumb,
+    .oita-maturi .section-content li .thumb {
+        width: 300px;
+        height: 200px;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .speciality .section-content li .content,
+    .tourist .section-content li .content,
+    .oita-maturi .section-content li .content {
+        width: 300px;
     }
 }
 

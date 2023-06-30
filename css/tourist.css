@@ -31,7 +31,6 @@
     width: 1100px;
     height: 320px;
     margin-bottom: 100px;
-    /* border: 1px solid green; */
 }
 .section-content li:nth-child(2) {
     flex-direction: row-reverse;
@@ -69,12 +68,12 @@
     position: absolute;
     left: 20px;
     top: 0;
-    width: 70px;
+    width: 45px;
     height: 2px;
     background-color:#EA6E14;
 }
-.section-content li:last-child .content::before {
-    width: 100px;
+.section-content li:nth-child(2) .content::before {
+    width: 115px;
 }
 .section-content li .content .title {
     font-size: 24px;
