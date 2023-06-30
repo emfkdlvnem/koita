@@ -46,7 +46,47 @@
     .oita-festival .festival-category dt {
         top: 125px;
     }
+
+    /* -------------------- festival-product.html --------------------*/
+    /* -------------------- oita-product.html --------------------*/
+    .product-filter {
+        max-width: 750px;
+    }
+    #product-list {
+        width: 850px;
+    }
+    #product-list .product {
+        width: 350px;
+        height: 520px;
+        margin: 0 25px 50px;
+    }
+    #product-list .product:nth-child(3),
+    #product-list .product:nth-child(6) {
+        margin-right: 25px;
+    }
+    #product-list .product .thumb {
+        width: 350px;
+        height: 300px;
+    }
+
+    /* -------------------- festival-detail.html --------------------*/
+    /* -------------------- oita-detail.html --------------------*/
+    .festival-detail .box,
+    .oita-detail .box {
+        width: 800px;
+    }
+    #product-detail .thumb,
+    #product-detail .content {
+        width: 400px;
+    }
+    #product-detail .content {
+        margin-top: 20px;
+    }
+    .select-box {
+        top: 220px;
+    }
 }
+
 @media screen and (max-width: 1042px) {
     /* -------------------- youtube.html --------------------*/
     /* 유튜브 api */
@@ -65,6 +105,7 @@
         height: 70px;
     }
 }
+
 @media screen and (max-width: 940px) {
     /* -------------------- cart.html --------------------*/
     .cart-inn {
@@ -143,7 +184,7 @@
         font-size: 14px;
     }
 
-    /* -------------------- header.html --------------------*/
+    /* -------------------- cart.html --------------------*/
     /* cart */
     .header-main-bar .cart a span {
         display: none;
@@ -169,8 +210,69 @@
         width: 60px;
         height: 60px;
     }
+    
+    /* -------------------- festival-detail.html --------------------*/
+    /* -------------------- oita-detail.html --------------------*/
+
+    #product-detail {
+        flex-direction: column;
+    }
+    .festival-detail .box,
+    .oita-detail .box {
+        width: 300px;
+    }
+    .festival-detail .box::before,
+    .oita-detail .box::before {
+        display: none;
+    }
+    #product-detail .thumb,
+    #product-detail .content {
+        width: 300px;
+        padding: 20px;
+    }
+    #product-detail .content {
+        margin-top: 0px;
+        padding-top: 0;
+        height: 280px;
+    }
+    #product-detail .content h4 {
+        font-size: 20px;
+      }
+      #product-detail .content > span {
+        font-size: 20px;
+      }
+      #product-detail .content .rating {
+      }
+    .select-box {
+        top: 450px;
+        right: 0;
+        left: 0;
+    }
 }
 
+@media screen and (max-width: 860px) {
+    /* -------------------- festival-product.html --------------------*/
+    /* -------------------- oita-product.html --------------------*/
+    .product-filter {
+        max-width: 300px;
+    }
+    #product-list {
+        width: 350px;
+    }
+    #product-list .product {
+        width: 300px;
+        height: 470px;
+        margin: 0 25px 50px;
+    }
+    #product-list .product:nth-child(3),
+    #product-list .product:nth-child(6) {
+        margin-right: 25px;
+    }
+    #product-list .product .thumb {
+        width: 300px;
+        height: 250px;
+    }
+}
 @media screen and (max-width: 836px) {
     /* -------------------- index.html --------------------*/
     /* slide content */
@@ -196,13 +298,21 @@
         font-size: 30px;
     }
 
-    .section-title span {
+    .section-title span,
+    .festival-product .section-title span,
+    .oita-product .section-title span,
+    .festival-detail .section-title span,
+    .oita-detail .section-title span {
         font-size: 28px;
     }
     .oita-tour .section-title img,
     .oita-festival .section-title img,
     .oita-shopping .section-title img 
-    .contact .section-title img {
+    .contact .section-title img,
+    .festival-product .section-title img,
+    .oita-product .section-title img,
+    .festival-detail .section-title img,
+    .oita-detail .section-title img {
         width: 28px;
     }
     .weather .section-title img,
@@ -287,8 +397,10 @@
     }
 
     /* -------------------- wish-list.html --------------------*/
-    .wish-list {margin-bottom: 0;}
-    .wish-list #wishlist-container .product{
+    .wish-list {
+        margin-bottom: 0;
+    }
+    .wish-list #wishlist-container .product {
         margin-top: -50px;
         margin-bottom: 100px;
     }
