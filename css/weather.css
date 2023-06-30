@@ -38,6 +38,7 @@
     margin: 0 20px;
     border: 1px solid #C4C4C4;
     border-radius: 10px;
+    background-color: #fff;
 }
 .weather .weather-content > .content .section-title {
     position: relative;

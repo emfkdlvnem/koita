@@ -108,6 +108,14 @@
         font-size: 14px;
         margin-top: 40px;
     }
+
+    /* -------------------- wish-list.html --------------------*/
+    .wish-list .title {
+        font-size: 28px;
+    }
+    #empty-wishlist {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 912px) {
@@ -201,9 +209,6 @@
     .youtube .section-title img {
         width: 54px;
     }
-    .youtube .section-title img {
-
-    }
 
     /* 오이타 소식 tour-category */
     /* 오이타 축제 festival-category */
@@ -279,6 +284,19 @@
     .weather .weather-content > .content .content-area .main-content .txt02 {margin-left: 10px;}
     .weather .weather-content > .content .content-area .sub-content  {
         font-size: 14px;
+    }
+
+    /* -------------------- wish-list.html --------------------*/
+    .wish-list {margin-bottom: 0;}
+    .wish-list #wishlist-container .product{
+        margin-top: -50px;
+        margin-bottom: 100px;
+    }
+    .wish-list #wishlist-container .product {
+        height: 200px;
+    }
+    .wish-list #wishlist-container .product .thumb {
+        width: 180px;
     }
 }
 
@@ -530,5 +548,21 @@
         top: 50%;
         transform: translateY(-50%);
         padding: 8px 15px;
+    }
+
+    /* -------------------- wish-list.html --------------------*/
+
+    .wish-list #wishlist-container .product {
+        height: 120px;
+    }
+    .wish-list #wishlist-container .product .thumb {
+        width: 120px;
+    }
+    .wish-list #wishlist-container .product .wishlist-detail h3 {
+        font-size: 16px;
+    }
+    .wish-list #wishlist-container .product .btn-area button {
+        width: 70px;
+        font-size: 14px;
     }
 }

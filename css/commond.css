@@ -13,6 +13,7 @@ html {
 }
 html, body {
     height: 100%;
+    background-color: #ECE8E3;
 }
 body, button, input, select, textarea, th, td {
     color: #222;

@@ -40,6 +40,7 @@
     margin: 0 auto 30px;
     border: 1px solid #C4C4C4;
     border-radius: 5px;
+    background-color: #fff;
 }
 .contact .contact-list .contact-item .content {
     position: relative;

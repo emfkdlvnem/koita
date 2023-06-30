@@ -25,6 +25,8 @@
   width: 1000px;
   margin:50px auto;
   border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  overflow:hidden;
 }
 
 .oita-detail .box::before {
@@ -35,6 +37,7 @@
   background-color: #c4c4c4;
   width: 1px;
   height: 100%;
+  z-index: 1;
 }
 
 #product-detail {
@@ -42,6 +45,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  background-color: #fff;
 }
 #product-detail .thumb {
   width: 500px;

@@ -167,10 +167,12 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     overflow: hidden;
+    background-color: #fff;
 }
 .section-content li .thumb {
     width: 280px;
     height: 180px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .section-content li .thumb img {
     width: 100%;

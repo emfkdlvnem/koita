@@ -5,15 +5,14 @@
     padding: 15px 24px;
 }
 .wish-list .title {
+    position: relative;
     font-size: 32px;
-    margin-bottom: 100px;
 }
-
-.wish-list #wishlist-container::before {
+.wish-list .title::before {
     content: '';
     position: absolute;
     left: 0;
-    top: -50px;
+    top: 100px;
     width: 100%;
     height: 1px;
     background-color: #c4c4c4;

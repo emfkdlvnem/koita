@@ -50,6 +50,9 @@
     margin-right: 50px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
 }
 
 #product-list .product:nth-child(3),
