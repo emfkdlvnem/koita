@@ -123,6 +123,7 @@
     }
     #cart-items .cart-item .thumb {
         width: 120px;
+        margin-right: 20px;
     }
 
     /* cart product list */
@@ -237,12 +238,10 @@
     }
     #product-detail .content h4 {
         font-size: 20px;
-      }
-      #product-detail .content > span {
+    }
+    #product-detail .content > span {
         font-size: 20px;
-      }
-      #product-detail .content .rating {
-      }
+    }
     .select-box {
         top: 450px;
         right: 0;
@@ -446,13 +445,6 @@
         right: 35%;
         transform: translateX(35%);
     }
-    /* -------------------- cart.html --------------------*/
-    #cart-items .cart-item .thumb {
-        margin-right: 50px;
-    }
-
-    /* total */
-
 }
 
 @media screen and (max-width: 760px) {
