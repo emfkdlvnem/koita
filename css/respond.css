@@ -18,16 +18,23 @@
 
     /* -------------------- speciality.html --------------------*/
     /* -------------------- tourist.html --------------------*/
-    .section-content li {
+    /* -------------------- oita-maturi.html --------------------*/
+    .speciality .section-content li,
+    .tourist .section-content li,
+    .oita-maturi .section-content li {
         width: 750px;
         height: 245px;
         margin-bottom: 70px;
     }
-    .section-content li .thumb {
+    .speciality .section-content li .thumb,
+    .tourist .section-content li .thumb,
+    .oita-maturi .section-content li .thumb {
         width: 380px;
         height: 245px;
     }
-    .section-content li .content {
+    .speciality .section-content li .content,
+    .tourist .section-content li .content,
+    .oita-maturi .section-content li .content {
         width: 300px;
     }
 }
